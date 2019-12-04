@@ -1,0 +1,2442 @@
+******************************************************************************
+                  TI ARM Linker PC v18.12.2                    
+******************************************************************************
+>> Linked Tue Dec  3 16:33:16 2019
+
+OUTPUT FILE NAME:   <init_intercomponent_milestone_CC3220SF_LAUNCHXL_freertos_ccs_syscfg2.out>
+ENTRY POINT SYMBOL: "resetISR"  address: 01014d99
+
+
+MEMORY CONFIGURATION
+
+         name            origin    length      used     unused   attr    fill
+----------------------  --------  ---------  --------  --------  ----  --------
+  FLASH_HDR             01000000   000007ff  00000000  000007ff  R  X
+  FLASH                 01000800   000ff800  00015638  000ea1c8  R  X
+  SRAM                  20000000   00040000  0000adbd  00035243  RW X
+
+
+SEGMENT ALLOCATION MAP
+
+run origin  load origin   length   init length attrs members
+----------  ----------- ---------- ----------- ----- -------
+01000800    01000800    00015640   00015640    r-x
+  01000800    01000800    00000040   00000040    r-- .resetVecs
+  01000840    01000840    00014ad6   00014ad6    r-x .text
+  01015318    01015318    00000962   00000962    r-- .const
+  01015c80    01015c80    000001c0   000001c0    r-- .cinit
+20000400    20000400    0000a6b4   00000000    rw-
+  20000400    20000400    000099dd   00000000    rw- .bss
+  20009de0    20009de0    00000cd4   00000000    rw- .data
+2003fc00    2003fc00    00000400   00000000    rw-
+  2003fc00    2003fc00    00000400   00000000    rw- .stack
+
+
+SECTION ALLOCATION MAP
+
+ output                                  attributes/
+section   page    origin      length       input sections
+--------  ----  ----------  ----------   ----------------
+.resetVecs 
+*          0    01000800    00000040     
+                  01000800    00000040     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : startup_cc32xx_ccs.obj (.resetVecs:retain)
+
+.text      0    01000840    00014ad6     
+                  01000840    00000a4e     rtsv7M4_T_le_eabi.lib : _printfi.c.obj (.text:__TI_printfi)
+                  0100128e    00000002     Board.obj (.text:Board_initHook)
+                  01001290    000008cc     simplelink.a : driver.obj (.text:_SlDrvMsgRead)
+                  01001b5c    000004bc                  : sl_socket.obj (.text:_SlSocketHandleAsync_Select)
+                  01002018    0000042c     driverlib.a : prcm.obj (.text:PRCMCC3200MCUInit)
+                  01002444    00000384     simplelink.a : driver.obj (.text:_SlDrvMsgWrite)
+                  010027c8    0000031c     jsonParse.obj (.text:jsmn_parse)
+                  01002ae4    000002e0     simplelink.a : driver.obj (.text:_SlDrvWaitForPoolObj)
+                  01002dc4    000002d8                  : driver.obj (.text:_SlDrvRxHdrRead)
+                  0100309c    000002b4                  : sl_socket.obj (.text:sl_Select)
+                  01003350    00000294                  : driver.obj (.text:_SlDrvReleasePoolObj)
+                  010035e4    00000280     jsonParse.obj (.text:parseAction)
+                  01003864    0000027c     simplelink.a : wlan.obj (.text:sl_WlanConnect)
+                  01003ae0    00000274                  : driver.obj (.text:_SlDrvDataReadOp)
+                  01003d54    00000268     rtsv7M4_T_le_eabi.lib : _printfi.c.obj (.text:_pconv_a)
+                  01003fbc    00000224     simplelink.a : driver.obj (.text:_SlDrvDriverCBInit)
+                  010041e0    00000218                  : driver.obj (.text:_SlDrvDataWriteOp)
+                  010043f8    0000020c     mqtt_client_app.obj (.text:MqttClient_start)
+                  01004604    00000204     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.text:UARTCC32XXDMA_open)
+                  01004808    000001f4     simplelink.a : driver.obj (.text:_SlDrvMsgReadCmdCtx)
+                  010049fc    000001f2                  : netapp.obj (.text:_SlNetAppEventHandler)
+                  01004bee    00000002     driverlib.a : interrupt.obj (.text:IntDefaultHandler)
+                  01004bf0    000001d8     drivers_cc32xx.aem4 : GPIOCC32XX.oem4 (.text:GPIO_setConfig)
+                  01004dc8    000001d4     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:xQueueSemaphoreTake)
+                  01004f9c    000001d0     drivers_cc32xx.aem4 : SPICC32XXDMA.oem4 (.text:SPICC32XXDMA_transfer)
+                  0100516c    000001cc     rtsv7M4_T_le_eabi.lib : _printfi.c.obj (.text:_pconv_g)
+                  01005338    000001c8     simplelink.a : device.obj (.text:sl_Stop)
+                  01005500    000001b8     drivers_cc32xx.aem4 : SPICC32XXDMA.oem4 (.text:configDMA)
+                  010056b8    000001b8     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:xQueueGenericSend)
+                  01005870    000001b6     rtsv7M4_T_le_eabi.lib : fd_add_t2.asm.obj (.text)
+                  01005a26    00000002     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : PowerCC32XX_freertos.obj (.text:PowerCC32XX_initPolicy)
+                  01005a28    000001b4     simplelink.a : driver.obj (.text:_SlDrvReleaseAllActivePendingPoolObj)
+                  01005bdc    000001b4                  : sl_socket.obj (.text:sl_Accept)
+                  01005d90    000001b0     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : PowerCC32XX_freertos.obj (.text:PowerCC32XX_sleepPolicy)
+                  01005f40    0000019c     mqtt_client_app.obj (.text:mainThread)
+                  010060dc    00000198     slnetsock_release.a : slnetsock.oem4 (.text:SlNetSock_select)
+                  01006274    0000018c     simplelink.a : sl_socket.obj (.text:_SlDrvRegisterForSelectAsync)
+                  01006400    0000018c     jsonParse.obj (.text:jsmn_parse_string)
+                  0100658c    00000184     simplelink.a : driver.obj (.text:_SlDrvFindAndSetActiveObj)
+                  01006710    00000184                  : sl_socket.obj (.text:sl_Connect)
+                  01006894    00000180     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:xQueueReceive)
+                  01006a14    00000178                                                       : heap_4.obj (.text:pvPortMalloc)
+                  01006b8c    00000168     simplelink.a : netapp.obj (.text:sl_NetAppDnsGetHostByName)
+                  01006cf4    00000164     mqtt_client_app.obj (.text:MqttClient)
+                  01006e58    00000164     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:prvProcessReceivedCommands)
+                  01006fbc    0000015a     mqtt_release.a : mqtt_net_func.oem4 (.text:createSocket)
+                  01007116    00000002     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.text:UARTCC32XXDMA_init)
+                  01007118    00000158                         : SPICC32XXDMA.oem4 (.text:SPICC32XXDMA_open)
+                  01007270    00000154     mqtt_release.a : mqttclient.oem4 (.text:MQTTClient_connect)
+                  010073c4    00000154     simplelink.a : sl_socket.obj (.text:sl_RecvFrom)
+                  01007518    00000148     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:parkPins)
+                  01007660    00000148     simplelink.a : sl_socket.obj (.text:sl_StartTLS)
+                  010077a8    00000140                  : driver.obj (.text:_SlDrvMsgReadSpawnCtx)
+                  010078e8    0000013c                  : driver.obj (.text:_SlDrvDriverCBDeinit)
+                  01007a24    0000013c                  : sl_socket.obj (.text:_SlDrvGetNextTimeoutValue)
+                  01007b60    0000013c     rtsv7M4_T_le_eabi.lib : _printfi.c.obj (.text:_pconv_e)
+                  01007c9c    0000013c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:xTaskIncrementTick)
+                  01007dd8    00000138                                                       : pthread.obj (.text:pthread_create)
+                  01007f10    00000136     rtsv7M4_T_le_eabi.lib : fd_div_t2.asm.obj (.text)
+                  01008046    00000002     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : startup_cc32xx_ccs.obj (.text:busFaultHandler)
+                  01008048    00000134     client_cbs.obj (.text:MqttClientCallback)
+                  0100817c    00000134     simplelink.a : sl_socket.obj (.text:_SlSocketHandleAsync_StartTLS)
+                  010082b0    0000012a     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:prvInitialiseNewTask)
+                  010083da    00000002                                                       : startup_cc32xx_ccs.obj (.text:defaultHandler)
+                  010083dc    00000128     simplelink.a : driver.obj (.text:_SlDrvClassifyRxMsg)
+                  01008504    00000124                  : fs.obj (.text:sl_FsOpen)
+                  01008628    00000120                  : driver.obj (.text:_SlDrvAsyncEventGenericHandler)
+                  01008748    00000120     rtsv7M4_T_le_eabi.lib : _printfi.c.obj (.text:fcvt)
+                  01008868    0000011c     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_sleep)
+                  01008984    0000011c     simplelink.a : device.obj (.text:sl_Start)
+                  01008aa0    0000011c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:xTaskResumeAll)
+                  01008bbc    00000118     simplelink.a : netapp.obj (.text:_SlNetAppHandleAsync_DnsGetHostByService)
+                  01008cd4    00000114     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:vTaskPriorityDisinheritAfterTimeout)
+                  01008de8    00000112     mqtt_release.a : mqtt_common.oem4 (.text:MQTT_PacketRecv)
+                  01008efa    00000002     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : startup_cc32xx_ccs.obj (.text:faultISR)
+                  01008efc    00000110     rtsv7M4_T_le_eabi.lib : strtoul.c.obj (.text:strtoul)
+                  0100900c    00000108     slnetsock_release.a : slnetutils.oem4 (.text:SlNetUtil_str2BinIpV6)
+                  01009114    00000108     simplelink.a : driver.obj (.text:_SlSpawnMsgListInsert)
+                  0100921c    00000104                  : device.obj (.text:_SlDeviceEventHandler)
+                  01009320    00000104                  : driver.obj (.text:_SlDrvCmdOp)
+                  01009424    00000104     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:xQueueGenericSendFromISR)
+                  01009528    00000100     simplelink.a : driver.obj (.text:_SlDrvObjGlobalLockWaitForever)
+                  01009628    00000100                  : sl_socket.obj (.text:sl_Close)
+                  01009728    00000100                  : fs.obj (.text:sl_FsWrite)
+                  01009828    000000fc     rtsv7M4_T_le_eabi.lib : fd_mul_t2.asm.obj (.text)
+                  01009924    000000fc     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:vTaskSuspend)
+                  01009a20    000000f8     slnetifwifi.a : slnetifwifi.obj (.text:SlNetIfWifi_loadSecObj)
+                  01009b18    000000f8     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.text:UARTCC32XXDMA_close)
+                  01009c10    000000f8     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:vTaskDelete)
+                  01009d08    000000f6     mqtt_release.a : mqtt_net_func.oem4 (.text:MQTTNet_commOpen)
+                  01009dfe    00000002     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : startup_cc32xx_ccs.obj (.text:nmiISR)
+                  01009e00    000000f4     simplelink.a : sl_socket.obj (.text:sl_SendTo)
+                  01009ef4    000000f2     drivers_cc32xx.aem4 : SPICC32XXDMA.oem4 (.text:SPICC32XXDMA_transferCancel)
+                  01009fe6    000000f0     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:xQueueGiveFromISR)
+                  0100a0d6    00000002     rtsv7M4_T_le_eabi.lib : div0.asm.obj (.text)
+                  0100a0d8    000000e8     mqtt_client_app.obj (.text:Mqtt_start)
+                  0100a1c0    000000e8     slnetsock_release.a : slnetif.oem4 (.text:SlNetIf_add)
+                  0100a2a8    000000e8     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.text:initHw)
+                  0100a390    000000e8     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:xTaskPriorityInherit)
+                  0100a478    000000e6     mqtt_release.a : client_core.oem4 (.text:utf8ArraySend)
+                  0100a55e    00000002     main_freertos.obj (.text:vApplicationMallocFailedHook)
+                  0100a560    000000e0     mqtt_release.a : mqttclient.oem4 (.text:MqttClientCtxCreate)
+                  0100a640    000000e0     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:xTaskPriorityDisinherit)
+                  0100a720    000000de     mqtt_release.a : client_core.oem4 (.text:connectMsgSend)
+                  0100a7fe    00000002     --HOLE-- [fill = 0]
+                  0100a800    000000dc     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:vTaskSwitchContext)
+                  0100a8dc    000000d8     drivers_cc32xx.aem4 : SPICC32XXDMA.oem4 (.text:SPICC32XXDMA_close)
+                  0100a9b4    000000d8     simplelink.a : device.obj (.text:_SlDeviceHandleAsync_InitComplete)
+                  0100aa8c    000000d8                  : driver.obj (.text:_SlDrvWaitForInternalAsyncEvent)
+                  0100ab64    000000d8                  : netapp.obj (.text:_SlNetAppHandleAsync_NetAppReceive)
+                  0100ac3c    000000d8     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:xQueueReceiveFromISR)
+                  0100ad14    000000d0     mqtt_client_app.obj (.text:SetClientIdNamefromMacAddress)
+                  0100ade4    000000d0     simplelink.a : driver.obj (.text:_SlDrvRemoveFromList)
+                  0100aeb4    000000d0     rtsv7M4_T_le_eabi.lib : s_scalbn.c.obj (.text:scalbn)
+                  0100af84    000000cc     mqtt_release.a : mqttclient.oem4 (.text:processNotifyAckCB)
+                  0100b050    000000c8     jsonParse.obj (.text:jsmn_parse_primitive)
+                  0100b118    000000c8     main_freertos.obj (.text:main)
+                  0100b1e0    000000c8     drivers_cc32xx.aem4 : SPICC32XXDMA.oem4 (.text:spiHwiFxn)
+                  0100b2a8    000000c4                         : GPIOCC32XX.oem4 (.text:GPIO_init)
+                  0100b36c    000000c4     network_if.obj (.text:Network_IF_ConnectAP)
+                  0100b430    000000c4     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:prvAddNewTaskToReadyList)
+                  0100b4f4    000000c0     mqtt_release.a : mqttclient.oem4 (.text:MqttClientSub)
+                  0100b5b4    000000c0     simplelink.a : cc_pal.obj (.text:NwpPowerOff)
+                  0100b674    000000c0     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:restoreParkedPins)
+                  0100b734    000000c0     simplelink.a : netcfg.obj (.text:sl_NetCfgGet)
+                  0100b7f4    000000c0     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : port.obj (.text:xPortStartScheduler)
+                  0100b8b4    000000be                                                       : queue.obj (.text:prvCopyDataToQueue)
+                  0100b972    00000002     --HOLE-- [fill = 0]
+                  0100b974    000000bc     simplelink.a : netapp.obj (.text:_SlNetAppSendResponse)
+                  0100ba30    000000bc     mqtt_release.a : client_core.oem4 (.text:clCtxConnStateTryLocked)
+                  0100baec    000000bc     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : heap_4.obj (.text:prvHeapInit)
+                  0100bba8    000000bc                                                       : timers.obj (.text:prvSwitchTimerLists)
+                  0100bc64    000000bc     simplelink.a : sl_socket.obj (.text:sl_Send)
+                  0100bd20    000000ba     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : portasm.obj (.text)
+                  0100bdda    00000002     --HOLE-- [fill = 0]
+                  0100bddc    000000b8     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.text:UARTCC32XXDMA_configDMA)
+                  0100be94    000000b8     simplelink.a : netapp.obj (.text:_SlNetAppHandleAsync_DnsGetHostByName)
+                  0100bf4c    000000b8                  : netapp.obj (.text:_SlNetAppHandleAsync_PingResponse)
+                  0100c004    000000b8                  : wlan.obj (.text:sl_WlanGet)
+                  0100c0bc    000000b8     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:xQueueGenericReset)
+                  0100c174    000000b4     mqtt_release.a : mqttclient.oem4 (.text:MqttClient_send)
+                  0100c228    000000b4     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.text:UARTCC32XXDMA_hwiIntFxn)
+                  0100c2dc    000000b4     simplelink.a : driver.obj (.text:_SlDrvHandleFatalError)
+                  0100c390    000000b4                  : netutil.obj (.text:_SlNetUtilHandleAsync_Cmd)
+                  0100c444    000000b4     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : clock.obj (.text:_clock_abstime2ticks)
+                  0100c4f8    000000b4     simplelink.a : sl_socket.obj (.text:sl_GetSockOpt)
+                  0100c5ac    000000b1     rtsv7M4_T_le_eabi.lib : _printfi.c.obj (.text:_ltostr)
+                  0100c65d    00000003     --HOLE-- [fill = 0]
+                  0100c660    000000b0     slnetifwifi.a : slnetifwifi.obj (.text:SlNetIfWifi_getSockOpt)
+                  0100c710    000000b0     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:prvAddCurrentTaskToDelayedList)
+                  0100c7c0    000000b0                                                       : tasks.obj (.text:xTaskCheckForTimeOut)
+                  0100c870    000000ae     slnetifwifi.a : slnetifwifi.obj (.text:matchModeByRole)
+                  0100c91e    000000ae     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:prvUnlockQueue)
+                  0100c9cc    000000ac     simplelink.a : sl_socket.obj (.text:_SlSocketHandleAsync_Close)
+                  0100ca78    000000ac                  : sl_socket.obj (.text:_SlSocketHandleAsync_Connect)
+                  0100cb24    000000ac     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : clock.obj (.text:clock_gettime)
+                  0100cbd0    000000a8     driverlib.a : interrupt.obj (.text:IntDisable)
+                  0100cc78    000000a8                 : interrupt.obj (.text:IntEnable)
+                  0100cd20    000000a8                 : prcm.obj (.text:PRCMPeripheralClockGet)
+                  0100cdc8    000000a8     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:PowerCC32XX_configureWakeup)
+                  0100ce70    000000a8     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : heap_4.obj (.text:prvInsertBlockIntoFreeList)
+                  0100cf18    000000a8     simplelink.a : fs.obj (.text:sl_FsClose)
+                  0100cfc0    000000a8     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:xTaskRemoveFromEventList)
+                  0100d068    000000a6     simplelink.a : driver.obj (.text:_SlDrvIsTimeoutExpired)
+                  0100d10e    00000002     --HOLE-- [fill = 0]
+                  0100d110    000000a4     mqtt_release.a : mqttclient.oem4 (.text:MQTTClient_create)
+                  0100d1b4    000000a4                    : mqttclient.oem4 (.text:MqttClientConfig)
+                  0100d258    000000a4     mqtt_client_app.obj (.text:Mqtt_IF_Connect)
+                  0100d2fc    000000a4     simplelink.a : sl_socket.obj (.text:sl_Bind)
+                  0100d3a0    000000a0     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_create)
+                  0100d440    000000a0     simplelink.a : fs.obj (.text:FsGetCreateFsMode)
+                  0100d4e0    000000a0     network_if.obj (.text:SimpleLinkWlanEventHandler)
+                  0100d580    000000a0     simplelink.a : sl_socket.obj (.text:_SlDrvUnRegisterForSelectAsync)
+                  0100d620    000000a0                  : driver.obj (.text:_SlSpawnMsgListProcess)
+                  0100d6c0    0000009e                  : cc_pal.obj (.text:spi_Read)
+                  0100d75e    0000009e                  : cc_pal.obj (.text:spi_Write)
+                  0100d7fc    0000009c     mqtt_release.a : client_core.oem4 (.text:MQTTClientCore_initLib)
+                  0100d898    0000009c                    : client_core.oem4 (.text:MQTTClientCore_sendPubMsg)
+                  0100d934    0000009c                    : client_core.oem4 (.text:_msgDispatch)
+                  0100d9d0    0000009c     rtsv7M4_T_le_eabi.lib : memcpy_t2.asm.obj (.text)
+                  0100da6c    0000009c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : heap_4.obj (.text:vPortFree)
+                  0100db08    0000009a     mqtt_release.a : client_core.oem4 (.text:procPubMsgRx)
+                  0100dba2    00000002     --HOLE-- [fill = 0]
+                  0100dba4    00000098     drivers_cc32xx.aem4 : GPIOCC32XX.oem4 (.text:powerNotifyFxn)
+                  0100dc3c    00000096     mqtt_release.a : mqtt_net_func.oem4 (.text:MQTTNet_tcpSelect)
+                  0100dcd2    00000096     rtsv7M4_T_le_eabi.lib : ull_div_t2.asm.obj (.text)
+                  0100dd68    00000094     network_if.obj (.text:Network_IF_InitDriver)
+                  0100ddfc    00000094     simplelink.a : cc_pal.obj (.text:Semaphore_pend_handle)
+                  0100de90    00000094     drivers_cc32xx.aem4 : SPICC32XXDMA.oem4 (.text:initHw)
+                  0100df24    00000094     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:vTaskStartScheduler)
+                  0100dfb8    00000092     slnetsock_release.a : slnetsock.oem4 (.text:SlNetSock_create)
+                  0100e04a    00000002     --HOLE-- [fill = 0]
+                  0100e04c    00000090                         : slnetsock.oem4 (.text:SlNetSock_getVirtualSdConf)
+                  0100e0dc    00000090     simplelink.a : device.obj (.text:_SlDeviceHandleAsync_Stop)
+                  0100e16c    00000090                  : sl_socket.obj (.text:_SlSocketHandleAsync_Accept)
+                  0100e1fc    00000090     mqtt_release.a : mqttclient.oem4 (.text:processPublishRxCB)
+                  0100e28c    00000090     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:restoreNVICRegs)
+                  0100e31c    0000008c     mqtt_release.a : client_core.oem4 (.text:MQTTClientCore_createCtx)
+                  0100e3a8    0000008c     slnetsock_release.a : slnetsock.oem4 (.text:SlNetSock_accept)
+                  0100e434    0000008c     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.text:UARTCC32XXDMA_write)
+                  0100e4c0    0000008c     simplelink.a : driver.obj (.text:_SlDrvDriverIsApiAllowed)
+                  0100e54c    0000008c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : clock.obj (.text:_clock_gettimeMono)
+                  0100e5d8    0000008c     simplelink.a : sl_socket.obj (.text:sl_Recv)
+                  0100e664    00000088     driverlib.a : pin.obj (.text:PinConfigSet)
+                  0100e6ec    00000088     simplelink.a : driver.obj (.text:_SlDrvProtectAsyncRespSetting)
+                  0100e774    00000088     mqtt_release.a : client_core.oem4 (.text:procConnackRx)
+                  0100e7fc    00000088     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:prvProcessTimerOrBlockTask)
+                  0100e884    00000088     simplelink.a : eventreg.obj (.text:sl_UnregisterLibsEventHandler)
+                  0100e90c    00000088     mqtt_release.a : client_core.oem4 (.text:wrConnectPayload)
+                  0100e994    00000086     rtsv7M4_T_le_eabi.lib : fd_cmp_t2.asm.obj (.text:__aeabi_cdcmple)
+                  0100ea1a    00000086                           : fd_cmp_t2.asm.obj (.text:__aeabi_cdrcmple)
+                  0100eaa0    00000084     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_init)
+                  0100eb24    00000084     slnetifwifi.a : slnetifwifi.obj (.text:SlNetIfWifi_sockstartSec)
+                  0100eba8    00000084     slnetsock_release.a : slnetutils.oem4 (.text:SlNetUtil_getHostByName)
+                  0100ec2c    00000084     mqtt_release.a : client_core.oem4 (.text:mqpSetupProcCtxDataRecv)
+                  0100ecb0    00000084     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:saveNVICRegs)
+                  0100ed34    00000084     simplelink.a : sl_socket.obj (.text:sl_SetSockOpt)
+                  0100edb8    00000084     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:xTimerGenericCommand)
+                  0100ee3c    00000080     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_setDependency)
+                  0100eebc    00000080                         : UARTCC32XXDMA.oem4 (.text:UARTCC32XXDMA_read)
+                  0100ef3c    00000080     mqtt_release.a : client_core.oem4 (.text:clCtxPartSend)
+                  0100efbc    00000080     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:prvProcessExpiredTimer)
+                  0100f03c    0000007c     drivers_cc32xx.aem4 : UDMACC32XX.oem4 (.text:UDMACC32XX_open)
+                  0100f0b8    0000007c     mqtt_release.a : client_core.oem4 (.text:procCtxDataRecv)
+                  0100f134    0000007a     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.text:UARTCC32XXDMA_readPolling)
+                  0100f1ae    0000007a     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread.obj (.text:removeThreadKeys)
+                  0100f228    0000007a     rtsv7M4_T_le_eabi.lib : memset_t2.asm.obj (.text)
+                  0100f2a2    0000007a     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:xTaskCreate)
+                  0100f31c    00000078     drivers_cc32xx.aem4 : GPIOCC32XX.oem4 (.text:GPIO_hwiIntFxn)
+                  0100f394    00000078     mqtt_release.a : mqtt_net_func.oem4 (.text:MQTTNet_recvFrom)
+                  0100f40c    00000078     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:prvInsertTimerInActiveList)
+                  0100f484    00000078     simplelink.a : sl_socket.obj (.text:sl_Socket)
+                  0100f4fc    00000074     mqtt_release.a : mqtt_net_func.oem4 (.text:MQTTNet_tcpAccept)
+                  0100f570    00000074     slnetsock_release.a : slnetsock.oem4 (.text:SlNetSock_AllocVirtualSocket)
+                  0100f5e4    00000074     mqtt_release.a : client_core.oem4 (.text:groupCtxsRxPrep)
+                  0100f658    00000074     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:prvInitialiseTaskLists)
+                  0100f6cc    00000074                                                       : pthread_mutex.obj (.text:pthread_mutex_init)
+                  0100f740    00000074                                                       : port.obj (.text:vPortValidateInterruptPriority)
+                  0100f7b4    00000072     mqtt_release.a : mqtt_common.oem4 (.text:MQTT_packetProcPubRx)
+                  0100f826    00000002     --HOLE-- [fill = 0]
+                  0100f828    00000070     simplelink.a : driver.obj (.text:_SlDrvCmdSend_noLock)
+                  0100f898    00000070     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : ClockP_freertos.obj (.text:setClockObjTimeout)
+                  0100f908    0000006e     rtsv7M4_T_le_eabi.lib : _printfi.c.obj (.text:_mcpy)
+                  0100f976    00000002     --HOLE-- [fill = 0]
+                  0100f978    0000006c     mqtt_release.a : mqttclient.oem4 (.text:MQTTClient_run)
+                  0100f9e4    0000006c     slnetsock_release.a : slnetutils.oem4 (.text:SlNetUtil_str2BinIpV4)
+                  0100fa50    0000006c     simplelink.a : device.obj (.text:_SlDeviceHandleResetRequestInternally)
+                  0100fabc    0000006c                  : sl_socket.obj (.text:_SlDrvOpenCtrlSocket)
+                  0100fb28    0000006c                  : netapp.obj (.text:_SlNetAppSendTokenValue)
+                  0100fb94    0000006c     debug.obj (.text:dbgUARTInit)
+                  0100fc00    0000006a     mqtt_release.a : mqtt_net_func.oem4 (.text:MQTTNet_sendTo)
+                  0100fc6a    0000006a     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:xQueueGenericCreate)
+                  0100fcd4    00000068     mqtt_release.a : mqtt_common.oem4 (.text:MQTT_qos2PubCqUnlog)
+                  0100fd3c    00000068     simplelink.a : driver.obj (.text:_SlSpawnMsgListGetCount)
+                  0100fda4    00000068     rtsv7M4_T_le_eabi.lib : copy_decompress_lzss.c.obj (.text:decompress:lzss:__TI_decompress_lzss)
+                  0100fe0c    00000068     simplelink.a : cc_pal.obj (.text:spi_Open)
+                  0100fe74    00000066     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:prvInitialiseNewTimer)
+                  0100feda    00000066                                                       : list.obj (.text:vListInsert)
+                  0100ff40    00000064                                                       : ClockP_freertos.obj (.text:ClockP_stop)
+                  0100ffa4    00000064     mqtt_release.a : mqtt_common.oem4 (.text:MQTT_packetPubAppendTopic)
+                  01010008    00000064     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:PowerCC32XX_setParkState)
+                  0101006c    00000064     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread_mutex.obj (.text:acquireMutex)
+                  010100d0    00000064     mqtt_release.a : client_core.oem4 (.text:clientReset)
+                  01010134    00000064                    : client_core.oem4 (.text:doNetClose)
+                  01010198    00000064     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:prvGetExpectedIdleTime)
+                  010101fc    00000060                                                       : HwiPCC32XX_freertos.obj (.text:HwiP_create)
+                  0101025c    00000060     driverlib.a : prcm.obj (.text:PRCMSysResetCauseGet)
+                  010102bc    00000060     slnetsock_release.a : slnetsock.oem4 (.text:SlNetSock_recvFrom)
+                  0101031c    00000060                         : slnetsock.oem4 (.text:SlNetSock_sendTo)
+                  0101037c    00000060     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.text:UARTCC32XXDMA_control)
+                  010103dc    00000060     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread_mutex.obj (.text:pthread_mutex_unlock)
+                  0101043c    0000005e     slnetifwifi.a : slnetifwifi.obj (.text:SlNetIfWifi_setSockOpt)
+                  0101049a    0000005e     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : semaphore.obj (.text:sem_timedwait)
+                  010104f8    0000005c     drivers_cc32xx.aem4 : GPIOCC32XX.oem4 (.text:GPIO_setCallback)
+                  01010554    0000005c     mqtt_release.a : mqtt_net_func.oem4 (.text:MQTTNet_tcpListen)
+                  010105b0    0000005c     network_if.obj (.text:Network_IF_IpConfigGet)
+                  0101060c    0000005c     simplelink.a : spawn.obj (.text:_SlInternalSpawn)
+                  01010668    0000005c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : memory.obj (.text:calloc)
+                  010106c4    0000005c     rtsv7M4_T_le_eabi.lib : s_frexp.c.obj (.text:frexp)
+                  01010720    0000005c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:prvIdleTask)
+                  0101077c    0000005c                                                       : pthread.obj (.text:pthread_exit)
+                  010107d8    0000005c     uart_queue.obj (.text:sendMsgToUart)
+                  01010834    0000005c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:vQueueWaitForMessageRestricted)
+                  01010890    0000005c                                                       : tasks.obj (.text:vTaskDelay)
+                  010108ec    00000058     driverlib.a : interrupt.obj (.text:IntPendClear)
+                  01010944    00000058                 : prcm.obj (.text:PRCMPeripheralReset)
+                  0101099c    00000058     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_releaseDependency)
+                  010109f4    00000058     network_if.obj (.text:SimpleLinkNetAppEventHandler)
+                  01010a4c    00000058     slnetsock_release.a : slnetsock.oem4 (.text:SlNetSock_recv)
+                  01010aa4    00000058                         : slnetsock.oem4 (.text:SlNetSock_send)
+                  01010afc    00000058     simplelink.a : sl_socket.obj (.text:_SlDrvClearCtrlSocket)
+                  01010b54    00000058     mqtt_release.a : client_core.oem4 (.text:clRecv)
+                  01010bac    00000058     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:eTaskConfirmSleepModeStatus)
+                  01010c04    00000058     mqtt_release.a : client_core.oem4 (.text:singleCtxKaSequence)
+                  01010c5c    00000058     simplelink.a : sl_socket.obj (.text:sl_Listen)
+                  01010cb4    00000058                  : eventreg.obj (.text:sl_RegisterLibsEventHandler)
+                  01010d0c    00000058     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : port.obj (.text:vPortSetupTimerInterrupt)
+                  01010d64    00000058                                                       : queue.obj (.text:xQueueCreateCountingSemaphore)
+                  01010dbc    00000058                                                       : queue.obj (.text:xQueueTakeMutexRecursive)
+                  01010e14    00000056     mqtt_release.a : mqtt_common.oem4 (.text:MQTT_packetPubAppendData)
+                  01010e6a    00000056     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : SemaphoreP_freertos.obj (.text:SemaphoreP_create)
+                  01010ec0    00000056     rtsv7M4_T_le_eabi.lib : _printfi.c.obj (.text:_pconv_f)
+                  01010f16    00000056     mqtt_release.a : client_core.oem4 (.text:procAckMsgRx)
+                  01010f6c    00000054     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_delete)
+                  01010fc0    00000054     driverlib.a : interrupt.obj (.text:IntPrioritySet)
+                  01011014    00000054     mqtt_release.a : client_core.oem4 (.text:MQTTClientCore_sendDisconn)
+                  01011068    00000054     simplelink.a : driver.obj (.text:_SlDrvRxIrqHandler)
+                  010110bc    00000054     mqtt_release.a : client_core.oem4 (.text:grpNetSetupCreate)
+                  01011110    00000054     rtsv7M4_T_le_eabi.lib : ltoa.c.obj (.text:ltoa)
+                  01011164    00000054     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:xTimerCreateTimerTask)
+                  010111b8    00000052     drivers_cc32xx.aem4 : PowerCC32XX_asm.oem4 (.text:PowerCC32XX_resumeLPDS)
+                  0101120a    00000052     rtsv7M4_T_le_eabi.lib : _printfi.c.obj (.text:_ecpy)
+                  0101125c    00000050     simplelink.a : cc_pal.obj (.text:NwpRegisterInterruptHandler)
+                  010112ac    00000050     slnetsock_release.a : slnetif.oem4 (.text:SlNetIf_queryIf)
+                  010112fc    00000050     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.text:UARTCC32XXDMA_writePolling)
+                  0101134c    00000050     simplelink.a : sl_socket.obj (.text:_SlDrvCloseCtrlSocket)
+                  0101139c    00000050                  : driver.obj (.text:_SlDrvCmdSend_noWait)
+                  010113ec    00000050                  : driver.obj (.text:_SlDrvUpdateApiInProgress)
+                  0101143c    00000050                  : spawn.obj (.text:_SlInternalSpawnTaskEntry)
+                  0101148c    00000050                  : eventreg.obj (.text:_SlNetAppHttpServerHdlr)
+                  010114dc    00000050                  : eventreg.obj (.text:_SlNetAppRequestHdlr)
+                  0101152c    00000050     mqtt_release.a : client_core.oem4 (.text:_procAckMsgRx)
+                  0101157c    00000050     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : port.obj (.text:pxPortInitialiseStack)
+                  010115cc    00000050                                                       : semaphore.obj (.text:sem_init)
+                  0101161c    00000050                                                       : queue.obj (.text:xQueueGiveMutexRecursive)
+                  0101166c    0000004e     mqtt_release.a : client_core.oem4 (.text:MQTTClientCore_registerWillInfo)
+                  010116ba    0000004e     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.text:writeCancel)
+                  01011708    0000004c                         : GPIOCC32XX.oem4 (.text:GPIO_enableInt)
+                  01011754    0000004c     simplelink.a : cc_pal.obj (.text:NwpWaitForShutDownInd)
+                  010117a0    0000004c     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:PowerCC32XX_parkPin)
+                  010117ec    0000004c     slnetifwifi.a : slnetifwifi.obj (.text:SlNetIfWifi_getConnectionStatus)
+                  01011838    0000004c     slnetsock_release.a : slnetsock.oem4 (.text:SlNetSock_freeVirtualSocket)
+                  01011884    0000004c                         : slnetsock.oem4 (.text:SlNetSock_startSec)
+                  010118d0    0000004c     mqtt_release.a : client_core.oem4 (.text:ack1WlMqpDispatch)
+                  0101191c    0000004c     rtsv7M4_T_le_eabi.lib : atoi.c.obj (.text:atoi)
+                  01011968    0000004c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : startup_cc32xx_ccs.obj (.text:initVectors)
+                  010119b4    0000004c     mqtt_release.a : client_core.oem4 (.text:loopbTrigger)
+                  01011a00    0000004c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:prvCheckForValidListAndQueue)
+                  01011a4c    0000004c                                                       : tasks.obj (.text:prvCheckTasksWaitingTermination)
+                  01011a98    0000004c     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:restorePeriphClocks)
+                  01011ae4    0000004c     mqtt_release.a : client_core.oem4 (.text:singleCtxRxPrep)
+                  01011b30    0000004c     simplelink.a : wlan.obj (.text:sl_WlanSetMode)
+                  01011b7c    0000004c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : port.obj (.text:vPortEnterCritical)
+                  01011bc8    0000004a     mqtt_release.a : client_core.oem4 (.text:clCtxRecv)
+                  01011c12    0000004a     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.text:readCancel)
+                  01011c5c    00000048     driverlib.a : flash.obj (.text:FlashDisable)
+                  01011ca4    00000048     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : HwiPCC32XX_freertos.obj (.text:HwiP_dispatch)
+                  01011cec    00000048     mqtt_release.a : mqttclient.oem4 (.text:MQTTClient_set)
+                  01011d34    00000048     driverlib.a : prcm.obj (.text:PRCMLPDSEnter)
+                  01011d7c    00000048                 : prcm.obj (.text:PRCMPeripheralClkEnable)
+                  01011dc4    00000048     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_releaseConstraint)
+                  01011e0c    00000048     slnetsock_release.a : slnetsock.oem4 (.text:SlNetSock_connect)
+                  01011e54    00000048                         : slnetsock.oem4 (.text:SlNetSock_init)
+                  01011e9c    00000048                         : slnetsock.oem4 (.text:SlNetSock_setOpt)
+                  01011ee4    00000048     simplelink.a : eventreg.obj (.text:_SlDeviceFatalErrorEvtHdlr)
+                  01011f2c    00000048                  : eventreg.obj (.text:_SlDeviceGeneralEvtHdlr)
+                  01011f74    00000048                  : driver.obj (.text:_SlDrvBasicCmd)
+                  01011fbc    00000048                  : driver.obj (.text:_SlDrvSyncObjWaitTimeout)
+                  01012004    00000048                  : eventreg.obj (.text:_SlNetAppEvtHdlr)
+                  0101204c    00000048                  : eventreg.obj (.text:_SlNetAppRequestMemFree)
+                  01012094    00000048                  : eventreg.obj (.text:_SlSockEvtHdlr)
+                  010120dc    00000048                  : eventreg.obj (.text:_SlWlanEvtHdlr)
+                  01012124    00000048     mqtt_release.a : client_core.oem4 (.text:clCtxSetup)
+                  0101216c    00000048     jsonParse.obj (.text:jsoneq)
+                  010121b4    00000048     rtsv7M4_T_le_eabi.lib : fd_toi_t2.asm.obj (.text)
+                  010121fc    00000048     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : sleep.obj (.text:sleep)
+                  01012244    00000048                                                       : list.obj (.text:uxListRemove)
+                  0101228c    00000048     mqtt_release.a : client_core.oem4 (.text:wrConnectVh)
+                  010122d4    00000044                    : client_core.oem4 (.text:MQTTClientCore_run)
+                  01012318    00000044                    : mqtt_net_func.oem4 (.text:MQTTNet_tcpRecv)
+                  0101235c    00000044     driverlib.a : prcm.obj (.text:PRCMLPDSRestoreInfoSet)
+                  010123a0    00000044     drivers_cc32xx.aem4 : PowerCC32XX_asm.oem4 (.text:PowerCC32XX_enterLPDS)
+                  010123e4    00000044                         : SPI.oem4 (.text:SPI_init)
+                  01012428    00000044     slnetsock_release.a : slnetutils.oem4 (.text:SlNetUtil_strTok)
+                  0101246c    00000044     drivers_cc32xx.aem4 : UART.oem4 (.text:UART_init)
+                  010124b0    00000044     rtsv7M4_T_le_eabi.lib : autoinit.c.obj (.text:__TI_auto_init_nobinit_nopinit:__TI_auto_init_nobinit_nopinit)
+                  010124f4    00000044     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:prvInitialiseNewQueue)
+                  01012538    00000044                                                       : tasks.obj (.text:vTaskStepTick)
+                  0101257c    00000044     mqtt_release.a : client_core.oem4 (.text:vhMsgSend)
+                  010125c0    00000042                    : mqtt_common.oem4 (.text:MQTT_packetBufRdRemlen)
+                  01012602    00000042     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : memory.obj (.text:malloc)
+                  01012644    00000040     simplelink.a : sl_socket.obj (.text:CountSetBits)
+                  01012684    00000040     network_if.obj (.text:InitializeAppVariables)
+                  010126c4    00000040     mqtt_release.a : client_core.oem4 (.text:MQTTClientCore_registerCtxInfo)
+                  01012704    00000040     mqtt_client_app.obj (.text:MQTT_publish)
+                  01012744    00000040     driverlib.a : pin.obj (.text:PinModeSet)
+                  01012784    00000040     drivers_cc32xx.aem4 : SPI.oem4 (.text:SPI_open)
+                  010127c4    00000040     slnetsock_release.a : slnetsock.oem4 (.text:SlNetSock_bind)
+                  01012804    00000040                         : slnetsock.oem4 (.text:SlNetSock_secAttribSet)
+                  01012844    00000040     drivers_cc32xx.aem4 : UART.oem4 (.text:UART_open)
+                  01012884    00000040                         : UDMACC32XX.oem4 (.text:UDMACC32XX_init)
+                  010128c4    00000040     simplelink.a : driver.obj (.text:_SlDrvGlobalObjUnLock)
+                  01012904    00000040                  : driver.obj (.text:_SlFindAndReleasePendingCmd)
+                  01012944    00000040                  : spawn.obj (.text:_SlInternalSpawnWaitForEvent)
+                  01012984    00000040                  : eventreg.obj (.text:_SlIsEventRegistered)
+                  010129c4    00000040     mqtt_release.a : mqttclient.oem4 (.text:_sl_ExtLib_ServerAckLockedWait)
+                  01012a04    00000040     jsonParse.obj (.text:jsmn_alloc_token)
+                  01012a44    00000040     mqtt_release.a : client_core.oem4 (.text:netConnect)
+                  01012a84    00000040     mqtt_queue.obj (.text:receivedMsg_MqttQueue)
+                  01012ac4    00000040     rtsv7M4_T_le_eabi.lib : sprintf.c.obj (.text:sprintf)
+                  01012b04    00000040     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:vTaskPlaceOnEventListRestricted)
+                  01012b44    0000003e                                                       : ClockP_freertos.obj (.text:ClockP_callbackFxn)
+                  01012b82    0000003e     mqtt_release.a : mqtt_common.oem4 (.text:MQTT_packetAckWlistRemove)
+                  01012bc0    0000003e                    : mqtt_common.oem4 (.text:MQTT_packetBufTailWrRemlen)
+                  01012bfe    0000003e     slnetsock_release.a : slnetsock.oem4 (.text:SlNetSock_close)
+                  01012c3c    0000003e     simplelink.a : sl_socket.obj (.text:_SlSocketBuildAddress)
+                  01012c7a    0000003e     rtsv7M4_T_le_eabi.lib : _printfi.c.obj (.text:_fcpy)
+                  01012cb8    0000003e     mqtt_release.a : client_core.oem4 (.text:clCtxSeg1Send)
+                  01012cf6    0000003e                    : client_core.oem4 (.text:procPingrspRx)
+                  01012d34    0000003e     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread.obj (.text:pthread_setcancelstate)
+                  01012d72    0000003e                                                       : semaphore.obj (.text:sem_post)
+                  01012db0    0000003c     mqtt_release.a : client_core.oem4 (.text:MQTTClientCore_registerBuffers)
+                  01012dec    0000003c                    : mqttclient.oem4 (.text:MQTTClient_disconnect)
+                  01012e28    0000003c                    : mqtt_common.oem4 (.text:MQTT_qos2PubCqCheck)
+                  01012e64    0000003c     network_if.obj (.text:Network_IF_DisconnectFromAP)
+                  01012ea0    0000003c     driverlib.a : prcm.obj (.text:PRCMSlowClkCtrFastGet)
+                  01012edc    0000003c     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_setConstraint)
+                  01012f18    0000003c     network_if.obj (.text:SimpleLinkSockEventHandler)
+                  01012f54    0000003c     simplelink.a : netapp.obj (.text:_SlNetAppCopyPingResultsToReport)
+                  01012f90    0000003c     mqtt_release.a : mqttclient.oem4 (.text:processDisconnCB)
+                  01012fcc    0000003c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:prvCopyDataFromQueue)
+                  01013008    0000003c                                                       : tasks.obj (.text:prvResetNextTaskUnblockTime)
+                  01013044    0000003c                                                       : tasks.obj (.text:pvTaskGetThreadLocalStoragePointer)
+                  01013080    0000003c     mqtt_release.a : client_core.oem4 (.text:singleCtxRxPrepLocked)
+                  010130bc    0000003c                    : client_core.oem4 (.text:tailIncorpMsgID)
+                  010130f8    0000003c     simplelink.a : sl_socket.obj (.text:to_mSec)
+                  01013134    0000003c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : sleep.obj (.text:usleep)
+                  01013170    0000003c                                                       : list.obj (.text:vListInsertEnd)
+                  010131ac    0000003c                                                       : timers.obj (.text:xTimerCreate)
+                  010131e8    0000003a     slnetifwifi.a : slnetifwifi.obj (.text:SlNetIfWifi_getIPAddr)
+                  01013222    0000003a     mqtt_release.a : mqtt_common.oem4 (.text:mqpProcVhMsgIdRx)
+                  0101325c    00000038                    : client_core.oem4 (.text:MQTTClientCore_registerNetSvc)
+                  01013294    00000038                    : mqtt_common.oem4 (.text:MQTT_qos2PubCqLogup)
+                  010132cc    00000038     driverlib.a : prcm.obj (.text:PRCMLPDSEnterKeepDebugIf)
+                  01013304    00000038     slnetifwifi.a : slnetifwifi.obj (.text:SlNetIfWifi_recvFrom)
+                  0101333c    00000038                   : slnetifwifi.obj (.text:SlNetIfWifi_sendTo)
+                  01013374    00000038                   : slnetifwifi.obj (.text:SlNetIfWifi_socket)
+                  010133ac    00000038     slnetsock_release.a : slnetif.oem4 (.text:SlNetIf_configCheck)
+                  010133e4    00000038                         : slnetsock.oem4 (.text:SlNetSock_listen)
+                  0101341c    00000038                         : slnetutils.oem4 (.text:SlNetUtil_htonl)
+                  01013454    00000038     mqtt_release.a : client_core.oem4 (.text:mqpAllocAtomic)
+                  0101348c    00000038                    : client_core.oem4 (.text:netRecv)
+                  010134c4    00000038     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:notify)
+                  010134fc    00000038     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:prvGetNextExpireTime)
+                  01013534    00000038                                                       : port.obj (.text:prvTaskExitError)
+                  0101356c    00000038     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.text:startTxFifoEmptyClk)
+                  010135a4    00000036     mqtt_release.a : mqtt_common.oem4 (.text:MQTT_packetPrepFh)
+                  010135da    00000036     slnetifwifi.a : slnetifwifi.obj (.text:SlNetIfWifi_getHostByName)
+                  01013610    00000036                   : slnetifwifi.obj (.text:SlNetIfWifi_select)
+                  01013646    00000036     mqtt_release.a : client_core.oem4 (.text:_procPubRecRx)
+                  0101367c    00000036     rtsv7M4_T_le_eabi.lib : strncpy.c.obj (.text:strncpy)
+                  010136b2    00000002     --HOLE-- [fill = 0]
+                  010136b4    00000034     driverlib.a : pin.obj (.text:PinModeGet)
+                  010136e8    00000034     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:PowerCC32XX_restoreParkState)
+                  0101371c    00000034     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : SemaphoreP_freertos.obj (.text:SemaphoreP_pend)
+                  01013750    00000034     slnetsock_release.a : slnetutils.oem4 (.text:SlNetUtil_htons)
+                  01013784    00000034     drivers_cc32xx.aem4 : UDMACC32XX.oem4 (.text:UDMACC32XX_close)
+                  010137b8    00000034     mqtt_release.a : client_core.oem4 (.text:groupCtxsKaSequence)
+                  010137ec    00000034                    : client_core.oem4 (.text:mqpFreeLocked)
+                  01013820    00000034                    : client_core.oem4 (.text:procLoopbackRecv)
+                  01013854    00000034     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:prvSampleTimeNow)
+                  01013888    00000034     uart_thread.obj (.text:uartThread)
+                  010138bc    00000034     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:vTaskPlaceOnEventList)
+                  010138f0    00000034                                                       : tasks.obj (.text:vTaskSetThreadLocalStoragePointer)
+                  01013924    00000034     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.text:writeFinishedDoCallback)
+                  01013958    00000032     mqtt_release.a : mqtt_common.oem4 (.text:MQTT_clCtxTimeoutInsert)
+                  0101398a    00000032     mqtt_client_app.obj (.text:MqttClientThread)
+                  010139bc    00000032     mqtt_release.a : client_core.oem4 (.text:connectedStateRx)
+                  010139ee    00000030     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:PowerCC32XX_restoreParkedPin)
+                  01013a1e    00000030     simplelink.a : fs.obj (.text:_SlFsStrlen)
+                  01013a4e    00000030     mqtt_release.a : client_core.oem4 (.text:ack2MsgIdUnlog)
+                  01013a7e    00000030                    : client_core.oem4 (.text:bufUTF8WrTry)
+                  01013aae    00000002     --HOLE-- [fill = 0]
+                  01013ab0    00000030                    : client_core.oem4 (.text:clientDescInit)
+                  01013ae0    00000030                    : mqttclient.oem4 (.text:getAvailableClictxMem)
+                  01013b10    00000030     mqtt_queue.obj (.text:sendCmdMsg_MqttQueue)
+                  01013b40    00000030     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : list.obj (.text:vListInitialise)
+                  01013b70    00000030                                                       : port.obj (.text:vPortExitCritical)
+                  01013ba0    00000030                                                       : tasks.obj (.text:xTaskGetSchedulerState)
+                  01013bd0    0000002e     simplelink.a : cc_pal.obj (.text:Mutex_create_handle)
+                  01013bfe    0000002e     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:pvTimerGetTimerID)
+                  01013c2c    0000002e     rtsv7M4_T_le_eabi.lib : i_tofd_t2.asm.obj (.text)
+                  01013c5a    00000002     --HOLE-- [fill = 0]
+                  01013c5c    0000002c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : HwiPCC32XX_freertos.obj (.text:HwiP_disable)
+                  01013c88    0000002c     simplelink.a : cc_pal.obj (.text:NwpPowerOn)
+                  01013cb4    0000002c     driverlib.a : prcm.obj (.text:PRCMLPDSIntervalSet)
+                  01013ce0    0000002c     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:PowerCC32XX_getParkState)
+                  01013d0c    0000002c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : SemaphoreP_freertos.obj (.text:SemaphoreP_createBinary)
+                  01013d38    0000002c     slnetifwifi.a : slnetifwifi.obj (.text:SlNetIfWifi_recv)
+                  01013d64    0000002c                   : slnetifwifi.obj (.text:SlNetIfWifi_send)
+                  01013d90    0000002c     simplelink.a : driver.obj (.text:_SlDrvSyncObjWaitForever)
+                  01013dbc    0000002c     uart_queue.obj (.text:createUartQueue)
+                  01013de8    0000002c     mqtt_queue.obj (.text:create_MqttQueue)
+                  01013e14    0000002c     mqtt_release.a : client_core.oem4 (.text:doNetCloseRx)
+                  01013e40    0000002c     jsonParse.obj (.text:jsmn_fill_token)
+                  01013e6c    0000002c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread_mutex.obj (.text:pthread_mutexattr_settype)
+                  01013e98    0000002c     uart_queue.obj (.text:readMsqFromUartQueue)
+                  01013ec4    0000002c     mqtt_release.a : client_core.oem4 (.text:singleCtxAdjWaitSecsGet)
+                  01013ef0    0000002c     rtsv7M4_T_le_eabi.lib : strncmp.c.obj (.text:strncmp)
+                  01013f1c    0000002c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:vTaskSetApplicationTaskTag)
+                  01013f48    0000002c                                                       : port.obj (.text:xPortSysTickHandler)
+                  01013f74    0000002c                                                       : queue.obj (.text:xQueueCreateMutex)
+                  01013fa0    0000002a     slnetsock_release.a : slnetutils.oem4 (.text:SlNetUtil_inetPton)
+                  01013fca    0000002a     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.text:UARTCC32XXDMA_readCancel)
+                  01013ff4    0000002a                         : UARTCC32XXDMA.oem4 (.text:UARTCC32XXDMA_writeCancel)
+                  0101401e    0000002a     mqtt_release.a : client_core.oem4 (.text:ack2MsgIdDispatch)
+                  01014048    0000002a                    : client_core.oem4 (.text:pingReqSend)
+                  01014072    0000002a     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:prvInitialiseMutex)
+                  0101409c    0000002a     mqtt_release.a : client_core.oem4 (.text:txPartSetup)
+                  010140c6    0000002a     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:uxQueueMessagesWaiting)
+                  010140f0    00000028                                                       : HwiPCC32XX_freertos.obj (.text:HwiP_inISR)
+                  01014118    00000028     mqtt_release.a : mqtt_common.oem4 (.text:MQTT_packetBufWrUtf8)
+                  01014140    00000028     driverlib.a : prcm.obj (.text:PRCMLPDSWakeupSourceEnable)
+                  01014168    00000028                 : prcm.obj (.text:PRCMPeripheralClkDisable)
+                  01014190    00000028     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_registerNotify)
+                  010141b8    00000028     slnetsock_release.a : slnetif.oem4 (.text:SlNetIf_getIfByID)
+                  010141e0    00000028                         : slnetsock.oem4 (.text:SlNetSock_sdsIsSet)
+                  01014208    00000028                         : slnetsock.oem4 (.text:SlNetSock_sdsSet)
+                  01014230    00000028                         : slnetsock.oem4 (.text:SlNetSock_secAttribDelete)
+                  01014258    00000028     simplelink.a : driver.obj (.text:_SlDrvProtectionObjLockWaitForever)
+                  01014280    00000028                  : driver.obj (.text:_SlDrvProtectionObjUnLock)
+                  010142a8    00000028                  : flowcont.obj (.text:_SlFlowContSet)
+                  010142d0    00000028     mqtt_release.a : client_core.oem4 (.text:_procPubRelRx)
+                  010142f8    00000028                    : mqttclient.oem4 (.text:_sl_ExtLib_AwaitedAckLockedSet)
+                  01014320    00000028     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread.obj (.text:pthread_attr_setschedparam)
+                  01014348    00000028     mqtt_queue.obj (.text:readMsg_MqttQueue)
+                  01014370    00000028     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : semaphore.obj (.text:sem_trywait)
+                  01014398    00000028                                                       : tasks.obj (.text:xTaskGetApplicationTaskTag)
+                  010143c0    00000026     drivers_cc32xx.aem4 : List.oem4 (.text:List_put)
+                  010143e6    00000026                         : List.oem4 (.text:List_remove)
+                  0101440c    00000026     mqtt_release.a : mqtt_common.oem4 (.text:MQTT_clCtxRemove)
+                  01014432    00000026     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread.obj (.text:_pthread_cleanup_pop)
+                  01014458    00000026                                                       : queue.obj (.text:prvIsQueueFull)
+                  0101447e    00000002     --HOLE-- [fill = 0]
+                  01014480    00000024     driverlib.a : interrupt.obj (.text:IntUnregister)
+                  010144a4    00000024     network_if.obj (.text:SimpleLinkFatalErrorEventHandler)
+                  010144c8    00000024     slnetsock_release.a : slnetif.oem4 (.text:SlNetIf_getConnectionStatus)
+                  010144ec    00000024     simplelink.a : driver.obj (.text:_SlDrvIsApiInProgress)
+                  01014510    00000024                  : driver.obj (.text:_SlDrvStartMeasureTimeout)
+                  01014534    00000024     rtsv7M4_T_le_eabi.lib : boot_cortex_m.c.obj (.text:_c_int00_noargs:_c_int00_noargs)
+                  01014558    00000024     mqtt_release.a : client_core.oem4 (.text:conn2usedCtxs)
+                  0101457c    00000024     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:prvGetDisinheritPriorityAfterTimeout)
+                  010145a0    00000024     mqtt_release.a : client_core.oem4 (.text:recvHvecLoad)
+                  010145c4    00000024     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : semaphore.obj (.text:sem_getvalue)
+                  010145e8    00000024     simplelink.a : wlan.obj (.text:sl_WlanDisconnect)
+                  0101460c    00000024     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:vQueueDelete)
+                  01014630    00000024                                                       : tasks.obj (.text:vTaskInternalSetTimeOutState)
+                  01014654    00000022     mqtt_release.a : mqtt_common.oem4 (.text:MQTT_packetProcMsgIdAckRx)
+                  01014676    00000022     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : SemaphoreP_freertos.obj (.text:SemaphoreP_post)
+                  01014698    00000022                                                       : aeabi_portable.obj (.text:__aeabi_errno_addr)
+                  010146ba    00000022                                                       : pthread.obj (.text:pthread_attr_setdetachstate)
+                  010146dc    00000020                                                       : ClockP_freertos.obj (.text:ClockP_getCpuFreq)
+                  010146fc    00000020                                                       : HwiPCC32XX_freertos.obj (.text:HwiP_restore)
+                  0101471c    00000020     driverlib.a : interrupt.obj (.text:IntRegister)
+                  0101473c    00000020     mqtt_release.a : mqtt_common.oem4 (.text:MQTT_qos2PubCqReset)
+                  0101475c    00000020     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_unregisterNotify)
+                  0101477c    00000020     slnetifwifi.a : slnetifwifi.obj (.text:SlNetIfWifi_accept)
+                  0101479c    00000020     drivers_cc32xx.aem4 : SPICC32XXDMA.oem4 (.text:getPowerMgrId)
+                  010147bc    00000020                         : UARTCC32XXDMA.oem4 (.text:getPowerMgrId)
+                  010147dc    00000020     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : queue.obj (.text:prvIsQueueEmpty)
+                  010147fc    00000020                                                       : semaphore.obj (.text:semaphorePend)
+                  0101481c    00000020     mqtt_release.a : client_core.oem4 (.text:session311fix)
+                  0101483c    0000001e     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_start)
+                  0101485a    0000001e                                                       : HwiPCC32XX_freertos.obj (.text:HwiP_Params_init)
+                  01014878    0000001e     mqtt_release.a : client_core.oem4 (.text:MQTTClientCore_alloc)
+                  01014896    0000001e                    : client_core.oem4 (.text:MQTTClientCore_ctxRun)
+                  010148b4    0000001e     slnetifwifi.a : slnetifwifi.obj (.text:SlNetIfWifi_bind)
+                  010148d2    0000001e                   : slnetifwifi.obj (.text:SlNetIfWifi_connect)
+                  010148f0    0000001e     simplelink.a : driver.obj (.text:_SlDrvObjLockWaitForever)
+                  0101490e    0000001e                  : driver.obj (.text:_SlDrvObjUnLock)
+                  0101492c    0000001e                  : driver.obj (.text:_SlDrvSyncObjSignal)
+                  0101494a    0000001e     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread.obj (.text:_pthread_runStub)
+                  01014968    0000001e     jsonParse.obj (.text:jsmn_init)
+                  01014986    0000001e     drivers_cc32xx.aem4 : UDMACC32XX.oem4 (.text:postNotifyFxn)
+                  010149a4    0000001e     mqtt_release.a : client_core.oem4 (.text:procNetDataRecv)
+                  010149c2    0000001e                    : client_core.oem4 (.text:sessionDelete)
+                  010149e0    0000001c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_Params_init)
+                  010149fc    0000001c     driverlib.a : pin.obj (.text:PinToPadGet)
+                  01014a18    0000001c     simplelink.a : device.obj (.text:_SlDeviceGetStartResponseConvert)
+                  01014a34    0000001c                  : spawn.obj (.text:_SlInternalIsItSpawnThread)
+                  01014a50    0000001c     debug.obj (.text:dbgUARTVal)
+                  01014a6c    0000001c     mqtt_release.a : client_core.oem4 (.text:doNetCloseTx)
+                  01014a88    0000001c     rtsv7M4_T_le_eabi.lib : memccpy.c.obj (.text:memccpy)
+                  01014aa4    0000001c     mqtt_release.a : client_core.oem4 (.text:processRecv)
+                  01014ac0    0000001c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread.obj (.text:pthread_attr_init)
+                  01014adc    0000001c                                                       : pthread_mutex.obj (.text:pthread_mutexattr_init)
+                  01014af8    0000001c                                                       : tasks.obj (.text:pvTaskIncrementMutexHeldCount)
+                  01014b14    0000001c     mqtt_release.a : client_core.oem4 (.text:usedCtxsTOSort)
+                  01014b30    0000001a                    : mqtt_common.oem4 (.text:MQTT_packetAckWlistPurge)
+                  01014b4a    0000001a     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : PTLS.obj (.text:PTLS_taskDeleteHook)
+                  01014b64    0000001a     slnetifwifi.a : slnetifwifi.obj (.text:SlNetIfWifi_listen)
+                  01014b7e    0000001a     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.text:prvTimerTask)
+                  01014b98    0000001a                                                       : pthread_mutex.obj (.text:pthread_mutex_destroy)
+                  01014bb2    00000018     mqtt_release.a : mqtt_common.oem4 (.text:MQTT_clCtxTimeoutUpdate)
+                  01014bca    00000002     --HOLE-- [fill = 0]
+                  01014bcc    00000018     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_idleFunc)
+                  01014be4    00000018     driverlib.a : uart.obj (.text:UARTBusy)
+                  01014bfc    00000018     drivers_cc32xx.aem4 : UART.oem4 (.text:UART_Params_init)
+                  01014c14    00000018     rtsv7M4_T_le_eabi.lib : sprintf.c.obj (.text:_outs)
+                  01014c2c    00000018     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : memory.obj (.text:free)
+                  01014c44    00000018     mqtt_release.a : client_core.oem4 (.text:groupCtxsAdjWaitSecsGet)
+                  01014c5c    00000018                    : client_core.oem4 (.text:netClCtxFind)
+                  01014c74    00000018     rtsv7M4_T_le_eabi.lib : ll_mul_t2.asm.obj (.text)
+                  01014c8c    00000018     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : semaphore.obj (.text:sem_wait)
+                  01014ca4    00000016                                                       : ClockP_freertos.obj (.text:ClockP_setTimeout)
+                  01014cba    00000016     mqtt_release.a : mqtt_net_func.oem4 (.text:MQTTNet_commClose)
+                  01014cd0    00000016                    : mqtt_common.oem4 (.text:MQTT_clCtxReset)
+                  01014ce6    00000016                    : mqtt_common.oem4 (.text:MQTT_packetFree)
+                  01014cfc    00000016                    : mqtt_common.oem4 (.text:MQTT_packetInit)
+                  01014d12    00000016     driverlib.a : prcm.obj (.text:PRCMHIBRegRead)
+                  01014d28    00000016                 : prcm.obj (.text:PRCMHIBRegWrite)
+                  01014d3e    00000016     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : PTLS.obj (.text:PTLS_getBuf)
+                  01014d54    00000016                                                       : PTLS.obj (.text:PTLS_setBuf)
+                  01014d6a    00000016                                                       : SemaphoreP_freertos.obj (.text:SemaphoreP_Params_init)
+                  01014d80    00000016     simplelink.a : driver.obj (.text:_SlDrvMemZero)
+                  01014d96    00000002     --HOLE-- [fill = 0]
+                  01014d98    00000016     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : startup_cc32xx_ccs.obj (.text:resetISR)
+                  01014dae    00000016     rtsv7M4_T_le_eabi.lib : strchr.c.obj (.text:strchr)
+                  01014dc4    00000014     driverlib.a : cpu.obj (.text:CPUcpsie)
+                  01014dd8    00000014                 : interrupt.obj (.text:IntVTableBaseSet)
+                  01014dec    00000014     mqtt_release.a : mqttclient.oem4 (.text:MQTTClient_publish)
+                  01014e00    00000014                    : mqtt_net_func.oem4 (.text:MQTTNet_rtcSecs)
+                  01014e14    00000014                    : mqtt_common.oem4 (.text:MQTT_packetAckWlistAppend)
+                  01014e28    00000014                    : mqtt_common.oem4 (.text:MQTT_packetReset)
+                  01014e3c    00000014     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_getDependencyCount)
+                  01014e50    00000014                         : SPI.oem4 (.text:SPI_Params_init)
+                  01014e64    00000014     slnetsock_release.a : slnetsock.oem4 (.text:SlNetSock_sdsClrAll)
+                  01014e78    00000014     mqtt_release.a : client_core.oem4 (.text:ack1WlRmfree)
+                  01014e8c    00000014     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:prvDeleteTCB)
+                  01014ea0    00000014                                                       : pthread.obj (.text:pthread_attr_setstacksize)
+                  01014eb4    00000014                                                       : pthread_mutex.obj (.text:pthread_mutex_lock)
+                  01014ec8    00000014                                                       : pthread.obj (.text:pthread_self)
+                  01014edc    00000014                                                       : semaphore.obj (.text:sem_destroy)
+                  01014ef0    00000014     rtsv7M4_T_le_eabi.lib : strlen.c.obj (.text:strlen)
+                  01014f04    00000014     mqtt_release.a : client_core.oem4 (.text:txPartBufP)
+                  01014f18    00000014                    : client_core.oem4 (.text:txPartReset)
+                  01014f2c    00000014     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : PowerCC32XX_freertos.obj (.text:vPortSuppressTicksAndSleep)
+                  01014f40    00000014                                                       : tasks.obj (.text:xTaskGetCurrentTaskHandle)
+                  01014f54    00000014                                                       : tasks.obj (.text:xTaskGetTickCount)
+                  01014f68    00000012                                                       : HwiPCC32XX_freertos.obj (.text:HwiP_delete)
+                  01014f7a    00000012     slnetifwifi.a : slnetifwifi.obj (.text:SlNetIfWifi_close)
+                  01014f8c    00000012     mqtt_release.a : client_core.oem4 (.text:mqpDoNotReportCor)
+                  01014f9e    00000012                    : client_core.oem4 (.text:sessionResume)
+                  01014fb0    00000012     rtsv7M4_T_le_eabi.lib : wcslen.c.obj (.text:wcslen)
+                  01014fc2    00000010     Board.obj (.text:Board_init)
+                  01014fd2    00000010     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_getSystemTickPeriod)
+                  01014fe2    00000010     slnetsock_release.a : slnetsock.oem4 (.text:SlNetSock_secAttribCreate)
+                  01014ff2    00000002     --HOLE-- [fill = 0]
+                  01014ff4    00000010     driverlib.a : systick.obj (.text:SysTickDisable)
+                  01015004    00000010                 : systick.obj (.text:SysTickEnable)
+                  01015014    00000010     simplelink.a : driver.obj (.text:_SlDrvDispatchHttpServerEvents)
+                  01015024    00000010                  : driver.obj (.text:_SlDrvDispatchNetAppRequestEvents)
+                  01015034    00000010                  : driver.obj (.text:_SlDrvIsSpawnOwnGlobalLock)
+                  01015044    00000010     Board.obj (.text:dmaErrorFxn)
+                  01015054    00000010     debug.obj (.text:errorRoutine)
+                  01015064    00000010     mqtt_release.a : client_core.oem4 (.text:isConnected)
+                  01015074    00000010                    : client_core.oem4 (.text:isValidUTF8String)
+                  01015084    00000010                    : client_core.oem4 (.text:mqpFree)
+                  01015094    00000010     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : list.obj (.text:vListInitialiseItem)
+                  010150a4    00000010                                                       : tasks.obj (.text:vTaskSuspendAll)
+                  010150b4    0000000e     mqtt_release.a : mqttclient.oem4 (.text:MQTTClient_subscribe)
+                  010150c2    0000000e     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_getTransitionLatency)
+                  010150d0    0000000e     simplelink.a : driver.obj (.text:_SlDrvResetCmdExt)
+                  010150de    0000000e     mqtt_release.a : mqttclient.oem4 (.text:_sl_ExtLib_AwaitedAckSet)
+                  010150ec    0000000e                    : client_core.oem4 (.text:connSentStateRx)
+                  010150fa    0000000e     rtsv7M4_T_le_eabi.lib : copy_decompress_none.c.obj (.text:decompress:none:__TI_decompress_none)
+                  01015108    0000000e     drivers_cc32xx.aem4 : SPICC32XXDMA.oem4 (.text:postNotifyFxn)
+                  01015116    0000000e     simplelink.a : cc_pal.obj (.text:spi_Close)
+                  01015124    0000000c     driverlib.a : cpu.obj (.text:CPUwfi)
+                  01015130    0000000c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : HwiPCC32XX_freertos.obj (.text:HwiP_clearInterrupt)
+                  0101513c    0000000c                                                       : HwiPCC32XX_freertos.obj (.text:HwiP_disableInterrupt)
+                  01015148    0000000c                                                       : HwiPCC32XX_freertos.obj (.text:HwiP_enableInterrupt)
+                  01015154    0000000c     mqtt_release.a : client_core.oem4 (.text:MQTTClientCore_sendConnectMsg)
+                  01015160    0000000c                    : mqtt_common.oem4 (.text:MQTT_secureConnStructInit)
+                  0101516c    0000000c     network_if.obj (.text:Network_IF_ResetMCUStateMachine)
+                  01015178    0000000c     simplelink.a : cc_pal.obj (.text:NwpMaskInterrupt)
+                  01015184    0000000c                  : cc_pal.obj (.text:NwpUnMaskInterrupt)
+                  01015190    0000000c     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.text:Power_getConstraintMask)
+                  0101519c    0000000c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : SemaphoreP_freertos.obj (.text:SemaphoreP_delete)
+                  010151a8    0000000c     network_if.obj (.text:SimpleLinkHttpServerEventHandler)
+                  010151b4    0000000c     network_if.obj (.text:SimpleLinkNetAppRequestEventHandler)
+                  010151c0    0000000c     simplelink.a : device.obj (.text:_SlDeviceResetRequestInitCompletedCB)
+                  010151cc    0000000c     mqtt_release.a : client_core.oem4 (.text:_txPartReset)
+                  010151d8    0000000c     rtsv7M4_T_le_eabi.lib : s_copysign.c.obj (.text:copysign)
+                  010151e4    0000000c                           : copy_zero_init.c.obj (.text:decompress:ZI:__TI_zero_init)
+                  010151f0    0000000c     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.text:postNotifyFxn)
+                  010151fc    0000000c     driverlib.a : udma.obj (.text:uDMAErrorStatusClear)
+                  01015208    0000000c                 : udma.obj (.text:uDMAErrorStatusGet)
+                  01015214    0000000c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.text:vTaskMissedYield)
+                  01015220    0000000a     driverlib.a : interrupt.obj (.text:IntMasterEnable)
+                  0101522a    0000000a     drivers_cc32xx.aem4 : SPI.oem4 (.text:SPI_close)
+                  01015234    0000000a                         : SPI.oem4 (.text:SPI_transfer)
+                  0101523e    0000000a     network_if.obj (.text:SimpleLinkGeneralEventHandler)
+                  01015248    0000000a     network_if.obj (.text:SimpleLinkNetAppRequestMemFreeEventHandler)
+                  01015252    0000000a     drivers_cc32xx.aem4 : UART.oem4 (.text:UART_control)
+                  0101525c    0000000a                         : UART.oem4 (.text:UART_write)
+                  01015266    0000000a     rtsv7M4_T_le_eabi.lib : sprintf.c.obj (.text:_outc)
+                  01015270    0000000a     debug.obj (.text:dbgOutputLoc)
+                  0101527a    0000000a     simplelink.a : device.obj (.text:sl_Task)
+                  01015284    0000000a     main_freertos.obj (.text:vApplicationStackOverflowHook)
+                  0101528e    00000008     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : ClockP_freertos.obj (.text:ClockP_getSystemTicks)
+                  01015296    00000008     mqtt_release.a : client_core.oem4 (.text:MQTTClientCore_sendSubMsg)
+                  0101529e    00000008                    : mqtt_net_func.oem4 (.text:MQTTNet_tcpSend)
+                  010152a6    00000008     driverlib.a : prcm.obj (.text:PRCMSleepEnter)
+                  010152ae    00000008     simplelink.a : cc_pal.obj (.text:TimerGetCurrentTimestamp)
+                  010152b6    00000008     drivers_cc32xx.aem4 : SPICC32XXDMA.oem4 (.text:blockingTransferCallback)
+                  010152be    00000008                         : UARTCC32XXDMA.oem4 (.text:readSemCallback)
+                  010152c6    00000008     mqtt_release.a : client_core.oem4 (.text:txPartAddup)
+                  010152ce    00000008     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.text:writeSemCallback)
+                  010152d6    00000006                         : SPICC32XXDMA.oem4 (.text:SPICC32XXDMA_control)
+                  010152dc    00000006     driverlib.a : utils.obj (.text:UtilsDelay)
+                  010152e2    00000006     mqtt_release.a : client_core.oem4 (.text:ack2MsgIdLogup)
+                  010152e8    00000006                    : client_core.oem4 (.text:qos2PubRxIsDone)
+                  010152ee    00000006                    : client_core.oem4 (.text:qos2PubRxLogup)
+                  010152f4    00000006                    : client_core.oem4 (.text:qos2PubRxUnlog)
+                  010152fa    00000004     drivers_cc32xx.aem4 : SPICC32XXDMA.oem4 (.text:SPICC32XXDMA_init)
+                  010152fe    00000004     slnetsock_release.a : slnetif.oem4 (.text:SlNetIf_init)
+                  01015302    00000004                         : slnetutils.oem4 (.text:SlNetUtil_init)
+                  01015306    00000004     rtsv7M4_T_le_eabi.lib : pre_init.c.obj (.text:_system_pre_init)
+                  0101530a    00000004                           : exit.c.obj (.text:abort:abort)
+                  0101530e    00000004     mqtt_release.a : mqttclient.oem4 (.text:mutexLockup)
+                  01015312    00000004                    : mqttclient.oem4 (.text:mutexUnlock)
+
+.const     0    01015318    00000962     
+                  01015318    00000101     rtsv7M4_T_le_eabi.lib : ctype.c.obj (.const:.string:_ctypes_)
+                  01015419    00000003     mqtt_release.a : mqttclient.oem4 (.const:.string:$P$T0$1)
+                  0101541c    00000100     driverlib.a : pin.obj (.const:g_ulPinToPadMap)
+                  0101551c    000000d4                 : interrupt.obj (.const:g_pulRegs)
+                  010155f0    000000a8                 : prcm.obj (.const:PRCM_PeriphRegsList)
+                  01015698    00000080     uart_thread.obj (.const:.string:$P$T0$1)
+                  01015718    00000078     Board.obj (.const:spiCC32XXDMAHWAttrs)
+                  01015790    00000070     simplelink.a : driver.obj (.const:OpcodeTranslateTable)
+                  01015800    00000050                  : driver.obj (.const:_SlActionLookupTable)
+                  01015850    00000040     Board.obj (.const:PowerCC32XX_config)
+                  01015890    0000002c     mqtt_client_app.obj (.const:.string)
+                  010158bc    00000028     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.const:UARTCC32XXDMA_fxnTable)
+                  010158e4    00000024                         : UART.oem4 (.const:UART_defaultParams)
+                  01015908    00000024     Board.obj (.const:uartCC32XXHWAttrs0)
+                  0101592c    00000021     drivers_cc32xx.aem4 : GPIOCC32XX.oem4 (.const:.string:pinTable)
+                  0101594d    00000003     mqtt_release.a : mqttclient.oem4 (.const:MQTTClient_qos)
+                  01015950    00000020     simplelink.a : driver.obj (.const:RxMsgClassLUT)
+                  01015970    00000020     drivers_cc32xx.aem4 : SPI.oem4 (.const:SPI_defaultParams)
+                  01015990    00000020     simplelink.a : device.obj (.const:StartResponseLUT)
+                  010159b0    00000018     drivers_cc32xx.aem4 : SPICC32XXDMA.oem4 (.const:SPICC32XXDMA_fxnTable)
+                  010159c8    00000018     Board.obj (.const:SPI_config)
+                  010159e0    00000018     driverlib.a : interrupt.obj (.const:g_pulDisRegs)
+                  010159f8    00000018                 : interrupt.obj (.const:g_pulEnRegs)
+                  01015a10    00000018                 : interrupt.obj (.const:g_pulUnpendRegs)
+                  01015a28    00000014     simplelink.a : cc_pal.obj (.const:$P$T0$1)
+                  01015a3c    00000014                  : device.obj (.const:$P$T0$1)
+                  01015a50    00000014                  : driver.obj (.const:$P$T0$1)
+                  01015a64    00000014                  : fs.obj (.const:$P$T0$1)
+                  01015a78    00000014                  : cc_pal.obj (.const:$P$T1$2)
+                  01015a8c    00000014                  : driver.obj (.const:$P$T2$3)
+                  01015aa0    00000014     Board.obj (.const:GPIOCC32XX_config)
+                  01015ab4    00000014     slnetifwifi.a : slnetifwifi.obj (.const:StartSecOptName)
+                  01015ac8    00000014     drivers_cc32xx.aem4 : GPIOCC32XX.oem4 (.const:gpioBaseAddresses)
+                  01015adc    00000014                         : UARTCC32XXDMA.oem4 (.const:parityType)
+                  01015af0    00000014                         : GPIOCC32XX.oem4 (.const:powerResources)
+                  01015b04    00000010     mqtt_release.a : mqtt_net_func.oem4 (.const:$P$T0$1)
+                  01015b14    00000010     network_if.obj (.const:$P$T0$1)
+                  01015b24    00000010     mqtt_release.a : mqtt_net_func.oem4 (.const:$P$T1$2)
+                  01015b34    00000010     simplelink.a : sl_socket.obj (.const:_SlCtrlSockAddr)
+                  01015b44    00000010                  : sl_socket.obj (.const:_SlCtrlSockRelease)
+                  01015b54    00000010     drivers_cc32xx.aem4 : UARTCC32XXDMA.oem4 (.const:dataLength)
+                  01015b64    00000010     slnetifwifi.a : slnetifwifi.obj (.const:socketType)
+                  01015b74    0000000c     Board.obj (.const:UART_config)
+                  01015b80    0000000c     drivers_cc32xx.aem4 : SPICC32XXDMA.oem4 (.const:dmaNullConfig)
+                  01015b8c    0000000c                         : SPICC32XXDMA.oem4 (.const:dmaRxConfig)
+                  01015b98    0000000c                         : SPICC32XXDMA.oem4 (.const:dmaTxConfig)
+                  01015ba4    0000000c     Board.obj (.const:udmaCC3220SHWAttrs)
+                  01015bb0    00000008     Board.obj (.const:UDMACC32XX_config)
+                  01015bb8    00000008     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : port.obj (.const)
+                  01015bc0    00000008     simplelink.a : driver.obj (.const:g_H2NCnysPattern)
+                  01015bc8    00000008                  : driver.obj (.const:g_H2NSyncPattern)
+                  01015bd0    00000008     drivers_cc32xx.aem4 : SPICC32XXDMA.oem4 (.const:mode)
+                  01015bd8    00000008                         : GPIOCC32XX.oem4 (.const:outPinTypes)
+                  01015be0    00000008                         : UARTCC32XXDMA.oem4 (.const:stopBits)
+                  01015be8    00000007     Board.obj (.const)
+                  01015bef    00000006     drivers_cc32xx.aem4 : GPIOCC32XX.oem4 (.const:.string:interruptType)
+                  01015bf5    00000001     --HOLE-- [fill = 0]
+                  01015bf6    00000006                         : GPIOCC32XX.oem4 (.const:inPinTypes)
+                  01015bfc    00000006                         : GPIOCC32XX.oem4 (.const:outPinStrengths)
+                  01015c02    00000005     mqtt_release.a : client_core.oem4 (.const:.string:$P$T2$2)
+                  01015c07    00000001     --HOLE-- [fill = 0]
+                  01015c08    00000004     simplelink.a : sl_socket.obj (.const:$P$T0$1)
+                  01015c0c    00000004                  : wlan.obj (.const:$P$T0$1)
+                  01015c10    00000004                  : sl_socket.obj (.const:$P$T1$2)
+                  01015c14    00000004                  : sl_socket.obj (.const:$P$T2$3)
+                  01015c18    00000004     mqtt_release.a : client_core.oem4 (.const:.string:$P$T1$1)
+                  01015c1c    00000004     drivers_cc32xx.aem4 : GPIOCC32XX.oem4 (.const:.string:portInterruptIds)
+                  01015c20    00000004     simplelink.a : sl_socket.obj (.const:_SlAcceptCmdCtrl)
+                  01015c24    00000004                  : fs.obj (.const:_SlFsCloseCmdCtrl)
+                  01015c28    00000004                  : fs.obj (.const:_SlFsOpenCmdCtrl)
+                  01015c2c    00000004                  : fs.obj (.const:_SlFsWriteCmdCtrl)
+                  01015c30    00000004                  : netapp.obj (.const:_SlGetHostByNameCtrl)
+                  01015c34    00000004                  : sl_socket.obj (.const:_SlGetSockOptCmdCtrl)
+                  01015c38    00000004                  : sl_socket.obj (.const:_SlListenCmdCtrl)
+                  01015c3c    00000004                  : netapp.obj (.const:_SlNetAppSendResponseCmdCtrl)
+                  01015c40    00000004                  : netapp.obj (.const:_SlNetAppSendTokenValueCmdCtrl)
+                  01015c44    00000004                  : netcfg.obj (.const:_SlNetCfgGetCmdCtrl)
+                  01015c48    00000004                  : sl_socket.obj (.const:_SlRecvCmdCtrl)
+                  01015c4c    00000004                  : sl_socket.obj (.const:_SlRecvfomCmdCtrl)
+                  01015c50    00000004                  : sl_socket.obj (.const:_SlSelectCmdCtrl)
+                  01015c54    00000004                  : sl_socket.obj (.const:_SlSendCmdCtrl)
+                  01015c58    00000004                  : sl_socket.obj (.const:_SlSetSockOptCmdCtrl)
+                  01015c5c    00000004                  : sl_socket.obj (.const:_SlSockCloseCmdCtrl)
+                  01015c60    00000004                  : sl_socket.obj (.const:_SlSockSocketCmdCtrl)
+                  01015c64    00000004                  : device.obj (.const:_SlStopCmdCtrl)
+                  01015c68    00000004                  : wlan.obj (.const:_SlWlanCfgGetCmdCtrl)
+                  01015c6c    00000004                  : wlan.obj (.const:_SlWlanSetModeCmdCtrl)
+                  01015c70    00000004     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread.obj (.const)
+                  01015c74    00000002     mqtt_release.a : client_core.oem4 (.const:.string:MQTTClientCore_loopData)
+                  01015c76    00000002     --HOLE-- [fill = 0]
+                  01015c78    00000002     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread.obj (.const:.string)
+
+.cinit     0    01015c80    000001c0     
+                  01015c80    00000197     (.cinit..data.load) [load image, compression = lzss]
+                  01015e17    00000001     --HOLE-- [fill = 0]
+                  01015e18    0000000c     (__TI_handler_table)
+                  01015e24    00000004     --HOLE-- [fill = 0]
+                  01015e28    00000008     (.cinit..bss.load) [load image, compression = zero_init]
+                  01015e30    00000010     (__TI_cinit_table)
+
+.init_array 
+*          0    01000800    00000000     UNINITIALIZED
+
+.ramVecs   0    20000000    0000030c     NOLOAD SECTION
+                  20000000    0000030c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : startup_cc32xx_ccs.obj (.ramVecs)
+
+.bss       0    20000400    000099dd     UNINITIALIZED
+                  20000400    00008000     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : heap_4.obj (.bss:ucHeap)
+                  20008400    00000800     mqtt_release.a : mqttclient.oem4 (.bss:MQTTClient_buffer)
+                  20008c00    00000400     Board.obj (.bss:dmaControlTable)
+                  20009000    000003fc     (.common:g_CB)
+                  200093fc    000002b0     (.common:clients)
+                  200096ac    0000012c     (.common:PowerCC32XX_contextSave)
+                  200097d8    000000d0     mqtt_release.a : mqttclient.oem4 (.bss:MQTTClient_ctx)
+                  200098a8    000000c8     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.bss:pxReadyTasksLists)
+                  20009970    00000088     (.common:spiCC32XXDMAObjects)
+                  200099f8    00000080     slnetsock_release.a : slnetsock.oem4 (.bss:VirtualSockets)
+                  20009a78    00000080     (.common:payload_buff)
+                  20009af8    0000006c     (.common:uartCC32XXObjects0)
+                  20009b64    00000048     mqtt_release.a : mqttclient.oem4 (.bss:MQTTClient_packet)
+                  20009bac    0000002c     slnetsock_release.a : slnetsock.oem4 (.bss:VirtualSocketMutex)
+                  20009bd8    0000002c     (.common:GlobalLockObj)
+                  20009c04    00000028     (.common:g_SlInternalSpawnCB)
+                  20009c2c    00000024     (.common:g_ucConnectionSSID)
+                  20009c50    00000024     (.common:uartParams)
+                  20009c74    00000020     drivers_cc32xx.aem4 : GPIOCC32XX.oem4 (.bss:gpioCallbackInfo)
+                  20009c94    00000018     mqtt_release.a : client_core.oem4 (.bss:MQTTClientCore_recvHvec)
+                  20009cac    00000014     drivers_cc32xx.aem4 : UDMACC32XX.oem4 (.bss:postNotifyObj)
+                  20009cc0    00000014                         : GPIOCC32XX.oem4 (.bss:powerNotifyObj)
+                  20009cd4    00000014     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : timers.obj (.bss:xActiveTimerList1)
+                  20009ce8    00000014                                                       : timers.obj (.bss:xActiveTimerList2)
+                  20009cfc    00000014                                                       : tasks.obj (.bss:xDelayedTaskList1)
+                  20009d10    00000014                                                       : tasks.obj (.bss:xDelayedTaskList2)
+                  20009d24    00000014                                                       : tasks.obj (.bss:xPendingReadyList)
+                  20009d38    00000014                                                       : tasks.obj (.bss:xSuspendedTaskList)
+                  20009d4c    00000014                                                       : tasks.obj (.bss:xTasksWaitingTermination)
+                  20009d60    00000010     (.common:MQTTClient_Lib_CB)
+                  20009d70    0000000c     (.common:DeviceCB)
+                  20009d7c    0000000c     (.common:MqttClientExmple_params)
+                  20009d88    0000000c     (.common:Msg)
+                  20009d94    00000008                                                       : tasks.obj (.bss)
+                  20009d9c    00000008                                                       : timers.obj (.bss)
+                  20009da4    00000008                                                       : heap_4.obj (.bss:xStart)
+                  20009dac    00000008     (.common:g_ucConnectionBSSID)
+                  20009db4    00000008     (.common:spiCC32XXSDMAscratchBuf)
+                  20009dbc    00000008     (.common:udmaCC3220SObject)
+                  20009dc4    00000004     drivers_cc32xx.aem4 : GPIOCC32XX.oem4 (.bss)
+                  20009dc8    00000004     mqtt_client_app.obj (.bss)
+                  20009dcc    00000004     (.common:UART0)
+                  20009dd0    00000004     (.common:mqttQueue)
+                  20009dd4    00000004     (.common:uartQueue)
+                  20009dd8    00000002     (.common:MQTTClient_waitSecs)
+                  20009dda    00000002     (.common:g_usConnectIndex)
+                  20009ddc    00000001     (.common:RxIrqCnt)
+
+.data      0    20009de0    00000cd4     UNINITIALIZED
+                  20009de0    00000800     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : HwiPCC32XX_freertos.obj (.data:HwiP_dispatchTable)
+                  2000a5e0    0000016c     drivers_cc32xx.aem4 : PowerCC32XX.oem4 (.data:PowerCC32XX_module)
+                  2000a74c    000000f8     Board.obj (.data:parkInfo)
+                  2000a844    00000058     slnetifwifi.a : slnetifwifi.obj (.data:SlNetIfConfigWifi)
+                  2000a89c    00000035     mqtt_release.a : client_core.oem4 (.data)
+                  2000a8d1    00000001     drivers_cc32xx.aem4 : SPI.oem4 (.data)
+                  2000a8d2    00000001                         : UART.oem4 (.data)
+                  2000a8d3    00000001     mqtt_client_app.obj (.data:qos)
+                  2000a8d4    00000034     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : tasks.obj (.data)
+                  2000a908    00000028     mqtt_release.a : mqttclient.oem4 (.data:MQTTClient_net)
+                  2000a930    00000024     simplelink.a : eventreg.obj (.data:g_LibsEvents)
+                  2000a954    00000024                  : eventreg.obj (.data:g_UserEvents)
+                  2000a978    00000018     mqtt_client_app.obj (.data:Mqtt_ClientCtx)
+                  2000a990    00000018     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : port.obj (.data)
+                  2000a9a8    00000014                                                       : pthread.obj (.data:defaultPthreadAttrs)
+                  2000a9bc    00000014     mqtt_client_app.obj (.data)
+                  2000a9d0    00000010     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : heap_4.obj (.data)
+                  2000a9e0    0000000d     mqtt_client_app.obj (.data:ClientId)
+                  2000a9ed    00000001     slnetsock_release.a : slnetsock.oem4 (.data)
+                  2000a9ee    00000002     --HOLE--
+                  2000a9f0    0000000c     mqtt_client_app.obj (.data:SecurityParams)
+                  2000a9fc    0000000c     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : pthread_mutex.obj (.data:defAttrs)
+                  2000aa08    0000000c                                                       : timers.obj (.data)
+                  2000aa14    0000000c     Board.obj (.data:gpioPinConfigs)
+                  2000aa20    0000000c     network_if.obj (.data)
+                  2000aa2c    0000000c     simplelink.a : driver.obj (.data)
+                  2000aa38    0000000c     mqtt_client_app.obj (.data:will_param)
+                  2000aa44    00000009     mqtt_release.a : client_core.oem4 (.data:MQTTClientCore_mqtt310)
+                  2000aa4d    00000003     --HOLE--
+                  2000aa50    00000009     drivers_cc32xx.aem4 : GPIOCC32XX.oem4 (.data)
+                  2000aa59    00000003     --HOLE--
+                  2000aa5c    00000009     mqtt_release.a : mqttclient.oem4 (.data)
+                  2000aa65    00000003     --HOLE--
+                  2000aa68    00000008                    : mqttclient.oem4 (.data:MQTTClient_clientCfg)
+                  2000aa70    00000008     drivers_cc32xx.aem4 : UDMACC32XX.oem4 (.data)
+                  2000aa78    00000008     Board.obj (.data:gpioCallbackFunctions)
+                  2000aa80    00000008     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : clock.obj (.data:refTS)
+                  2000aa88    00000008                                                       : clock.obj (.data:setTS)
+                  2000aa90    00000007     mqtt_release.a : client_core.oem4 (.data:MQTTClientCore_mqtt311)
+                  2000aa97    00000001     --HOLE--
+                  2000aa98    00000004                    : mqttclient.oem4 (.data:MQTTClient_connectCfg)
+                  2000aa9c    00000004     freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib : ClockP_freertos.obj (.data)
+                  2000aaa0    00000004                                                       : HwiPCC32XX_freertos.obj (.data)
+                  2000aaa4    00000004                                                       : PowerCC32XX_freertos.obj (.data)
+                  2000aaa8    00000004     simplelink.a : cc_pal.obj (.data)
+                  2000aaac    00000004     slnetsock_release.a : slnetif.oem4 (.data)
+                  2000aab0    00000004     mqtt_client_app.obj (.data:topic)
+
+.stack     0    2003fc00    00000400     UNINITIALIZED
+                  2003fc00    00000004     rtsv7M4_T_le_eabi.lib : boot_cortex_m.c.obj (.stack)
+                  2003fc04    000003fc     --HOLE--
+
+.binit     0    01000000    00000000     
+
+MODULE SUMMARY
+
+       Module                       code    ro data   rw data
+       ------                       ----    -------   -------
+    .\
+       jsonParse.obj                2242    0         0      
+       mqtt_client_app.obj          2010    44        102    
+       network_if.obj               960     16        58     
+       client_cbs.obj               308     0         176    
+       main_freertos.obj            212     0         0      
+       uart_thread.obj              52      128       0      
+       debug.obj                    162     0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       5946    188       336    
+                                                             
+    .\my_queue_files\
+       mqtt_queue.obj               196     0         0      
+       uart_queue.obj               180     0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       376     0         0      
+                                                             
+    .\syscfg\
+       Board.obj                    34      303       1552   
+    +--+----------------------------+-------+---------+---------+
+       Total:                       34      303       1552   
+                                                             
+    C:/Users/megan/Documents/CLASSES/Embedded/workspace/freertos_builds_CC3220SF_LAUNCHXL_release_ccs/Debug/freertos_builds_CC3220SF_LAUNCHXL_release_ccs.lib
+       heap_4.obj                   888     0         32792  
+       tasks.obj                    4540    0         360    
+       queue.obj                    3408    0         0      
+       HwiPCC32XX_freertos.obj      368     0         2052   
+       timers.obj                   1562    0         60     
+       startup_cc32xx_ccs.obj       106     64        780    
+       pthread.obj                  798     6         20     
+       port.obj                     700     8         24     
+       ClockP_freertos.obj          654     0         4      
+       clock.obj                    492     0         16     
+       PowerCC32XX_freertos.obj     454     0         4      
+       pthread_mutex.obj            430     0         12     
+       semaphore.obj                388     0         0      
+       list.obj                     298     0         0      
+       SemaphoreP_freertos.obj      250     0         0      
+       portasm.obj                  186     0         0      
+       memory.obj                   182     0         0      
+       sleep.obj                    132     0         0      
+       PTLS.obj                     70      0         0      
+       aeabi_portable.obj           34      0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       15940   78        36124  
+                                                             
+    C:/ti/simplelink_cc32xx_sdk_3_20_00_06/source/ti/devices/cc32xx/driverlib/ccs/Release/driverlib.a
+       prcm.obj                     1924    168       0      
+       interrupt.obj                608     284       0      
+       pin.obj                      280     256       0      
+       flash.obj                    72      0         0      
+       cpu.obj                      32      0         0      
+       systick.obj                  32      0         0      
+       uart.obj                     24      0         0      
+       udma.obj                     24      0         0      
+       utils.obj                    6       0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       3002    708       0      
+                                                             
+    C:/ti/simplelink_cc32xx_sdk_3_20_00_06/source/ti/drivers/lib/drivers_cc32xx.aem4
+       PowerCC32XX.oem4             2322    0         664    
+       UARTCC32XXDMA.oem4           2332    84        0      
+       SPICC32XXDMA.oem4            2118    68        0      
+       GPIOCC32XX.oem4              1108    103       65     
+       UDMACC32XX.oem4              270     0         28     
+       UART.oem4                    176     36        1      
+       SPI.oem4                     172     32        1      
+       PowerCC32XX_asm.oem4         150     0         0      
+       List.oem4                    76      0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       8724    323       759    
+                                                             
+    C:/ti/simplelink_cc32xx_sdk_3_20_00_06/source/ti/drivers/net/wifi/ccs/rtos/simplelink.a
+       driver.obj                   12620   280       1077   
+       sl_socket.obj                7038    84        12     
+       netapp.obj                   2078    12        0      
+       device.obj                   1518    56        12     
+       cc_pal.obj                   1052    40        4      
+       fs.obj                       924     32        0      
+       eventreg.obj                 880     0         72     
+       wlan.obj                     932     12        0      
+       spawn.obj                    264     0         40     
+       netcfg.obj                   192     4         0      
+       netutil.obj                  180     0         0      
+       flowcont.obj                 40      0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       27718   520       1217   
+                                                             
+    C:/ti/simplelink_cc32xx_sdk_3_20_00_06/source/ti/drivers/net/wifi/slnetif/ccs/Release/slnetifwifi.a
+       slnetifwifi.obj              1458    36        88     
+    +--+----------------------------+-------+---------+---------+
+       Total:                       1458    36        88     
+                                                             
+    C:/ti/simplelink_cc32xx_sdk_3_20_00_06/source/ti/net/lib/ccs/m4/slnetsock_release.a
+       slnetsock.oem4               2092    0         173    
+       slnetutils.oem4              726     0         0      
+       slnetif.oem4                 448     0         4      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       3266    0         177    
+                                                             
+    C:/ti/simplelink_cc32xx_sdk_3_20_00_06/source/ti/net/mqtt/lib/ccs/m4/mqtt_release.a
+       client_core.oem4             5380    11        781    
+       mqttclient.oem4              2120    6         2407   
+       mqtt_common.oem4             1458    0         0      
+       mqtt_net_func.oem4           1294    32        0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       10252   49        3188   
+                                                             
+    C:\ti\ccs910\ccs\tools\compiler\ti-cgt-arm_18.12.2.LTS\lib\rtsv7M4_T_le_eabi.lib
+       _printfi.c.obj               4835    0         0      
+       fd_add_t2.asm.obj            438     0         0      
+       fd_div_t2.asm.obj            310     0         0      
+       strtoul.c.obj                272     0         0      
+       fd_cmp_t2.asm.obj            268     0         0      
+       ctype.c.obj                  0       257       0      
+       fd_mul_t2.asm.obj            252     0         0      
+       s_scalbn.c.obj               208     0         0      
+       memcpy_t2.asm.obj            156     0         0      
+       ull_div_t2.asm.obj           150     0         0      
+       memset_t2.asm.obj            122     0         0      
+       copy_decompress_lzss.c.obj   104     0         0      
+       sprintf.c.obj                98      0         0      
+       s_frexp.c.obj                92      0         0      
+       ltoa.c.obj                   84      0         0      
+       atoi.c.obj                   76      0         0      
+       fd_toi_t2.asm.obj            72      0         0      
+       autoinit.c.obj               68      0         0      
+       strncpy.c.obj                54      0         0      
+       i_tofd_t2.asm.obj            46      0         0      
+       strncmp.c.obj                44      0         0      
+       boot_cortex_m.c.obj          36      0         0      
+       memccpy.c.obj                28      0         0      
+       ll_mul_t2.asm.obj            24      0         0      
+       strchr.c.obj                 22      0         0      
+       strlen.c.obj                 20      0         0      
+       wcslen.c.obj                 18      0         0      
+       copy_decompress_none.c.obj   14      0         0      
+       copy_zero_init.c.obj         12      0         0      
+       s_copysign.c.obj             12      0         0      
+       exit.c.obj                   4       0         0      
+       pre_init.c.obj               4       0         0      
+       div0.asm.obj                 2       0         0      
+    +--+----------------------------+-------+---------+---------+
+       Total:                       7945    257       0      
+                                                             
+       Stack:                       0       0         1024   
+       Linker Generated:            0       443       0      
+    +--+----------------------------+-------+---------+---------+
+       Grand Total:                 84661   2905      44465  
+
+
+LINKER GENERATED COPY TABLES
+
+__TI_cinit_table @ 01015e30 records: 2, size/record: 8, table size: 16
+	.data: load addr=01015c80, load size=00000197 bytes, run addr=20009de0, run size=00000cd4 bytes, compression=lzss
+	.bss: load addr=01015e28, load size=00000008 bytes, run addr=20000400, run size=000099dd bytes, compression=zero_init
+
+
+LINKER GENERATED HANDLER TABLE
+
+__TI_handler_table @ 01015e18 records: 3, size/record: 4, table size: 12
+	index: 0, handler: __TI_decompress_lzss
+	index: 1, handler: __TI_decompress_none
+	index: 2, handler: __TI_zero_init
+
+
+GLOBAL SYMBOLS: SORTED ALPHABETICALLY BY Name 
+
+address   name                                      
+-------   ----                                      
+01014fc3  Board_init                                
+0100128f  Board_initHook                            
+0101530b  C$$EXIT                                   
+01014dc5  CPUcpsie                                  
+01015125  CPUwfi                                    
+01015be9  Capture_count                             
+2000a9e0  ClientId                                  
+010149e1  ClockP_Params_init                        
+01012b45  ClockP_callbackFxn                        
+0100d3a1  ClockP_create                             
+01010f6d  ClockP_delete                             
+010146dd  ClockP_getCpuFreq                         
+01014fd3  ClockP_getSystemTickPeriod                
+0101528f  ClockP_getSystemTicks                     
+01014ca5  ClockP_setTimeout                         
+0101483d  ClockP_start                              
+0100ff41  ClockP_stop                               
+01015bea  CryptoCC32XX_count                        
+20009d70  DeviceCB                                  
+01015be8  Display_count                             
+01011c5d  FlashDisable                              
+01015aa0  GPIOCC32XX_config                         
+01011709  GPIO_enableInt                            
+0100f31d  GPIO_hwiIntFxn                            
+0100b2a9  GPIO_init                                 
+010104f9  GPIO_setCallback                          
+01004bf1  GPIO_setConfig                            
+20009bd8  GlobalLockObj                             
+0101485b  HwiP_Params_init                          
+01015131  HwiP_clearInterrupt                       
+010101fd  HwiP_create                               
+01014f69  HwiP_delete                               
+01013c5d  HwiP_disable                              
+0101513d  HwiP_disableInterrupt                     
+01011ca5  HwiP_dispatch                             
+20009de0  HwiP_dispatchTable                        
+01015149  HwiP_enableInterrupt                      
+010140f1  HwiP_inISR                                
+010146fd  HwiP_restore                              
+01012685  InitializeAppVariables                    
+0100cbd1  IntDisable                                
+0100cc79  IntEnable                                 
+01015221  IntMasterEnable                           
+010108ed  IntPendClear                              
+01010fc1  IntPrioritySet                            
+0101471d  IntRegister                               
+01014481  IntUnregister                             
+01014dd9  IntVTableBaseSet                          
+010143c1  List_put                                  
+010143e7  List_remove                               
+01014879  MQTTClientCore_alloc                      
+0100e31d  MQTTClientCore_createCtx                  
+01014897  MQTTClientCore_ctxRun                     
+0100d7fd  MQTTClientCore_initLib                    
+01012db1  MQTTClientCore_registerBuffers            
+010126c5  MQTTClientCore_registerCtxInfo            
+0101325d  MQTTClientCore_registerNetSvc             
+0101166d  MQTTClientCore_registerWillInfo           
+010122d5  MQTTClientCore_run                        
+01015155  MQTTClientCore_sendConnectMsg             
+01011015  MQTTClientCore_sendDisconn                
+0100d899  MQTTClientCore_sendPubMsg                 
+01015297  MQTTClientCore_sendSubMsg                 
+20009d60  MQTTClient_Lib_CB                         
+2000aa68  MQTTClient_clientCfg                      
+2000aa60  MQTTClient_clientContext                  
+2000aa5c  MQTTClient_closeContext                   
+01007271  MQTTClient_connect                        
+2000aa98  MQTTClient_connectCfg                     
+0100d111  MQTTClient_create                         
+01012ded  MQTTClient_disconnect                     
+2000aa64  MQTTClient_multiSrvConn                   
+2000a908  MQTTClient_net                            
+01014ded  MQTTClient_publish                        
+0100f979  MQTTClient_run                            
+01011ced  MQTTClient_set                            
+010150b5  MQTTClient_subscribe                      
+20009dd8  MQTTClient_waitSecs                       
+01014cbb  MQTTNet_commClose                         
+01009d09  MQTTNet_commOpen                          
+0100f395  MQTTNet_recvFrom                          
+01014e01  MQTTNet_rtcSecs                           
+0100fc01  MQTTNet_sendTo                            
+0100f4fd  MQTTNet_tcpAccept                         
+01010555  MQTTNet_tcpListen                         
+01012319  MQTTNet_tcpRecv                           
+0100dc3d  MQTTNet_tcpSelect                         
+0101529f  MQTTNet_tcpSend                           
+01008de9  MQTT_PacketRecv                           
+0101440d  MQTT_clCtxRemove                          
+01014cd1  MQTT_clCtxReset                           
+01013959  MQTT_clCtxTimeoutInsert                   
+01014bb3  MQTT_clCtxTimeoutUpdate                   
+01014e15  MQTT_packetAckWlistAppend                 
+01014b31  MQTT_packetAckWlistPurge                  
+01012b83  MQTT_packetAckWlistRemove                 
+010125c1  MQTT_packetBufRdRemlen                    
+01012bc1  MQTT_packetBufTailWrRemlen                
+01014119  MQTT_packetBufWrUtf8                      
+01014ce7  MQTT_packetFree                           
+01014cfd  MQTT_packetInit                           
+010135a5  MQTT_packetPrepFh                         
+01014655  MQTT_packetProcMsgIdAckRx                 
+0100f7b5  MQTT_packetProcPubRx                      
+01010e15  MQTT_packetPubAppendData                  
+0100ffa5  MQTT_packetPubAppendTopic                 
+01014e29  MQTT_packetReset                          
+01012705  MQTT_publish                              
+01012e29  MQTT_qos2PubCqCheck                       
+01013295  MQTT_qos2PubCqLogup                       
+0101473d  MQTT_qos2PubCqReset                       
+0100fcd5  MQTT_qos2PubCqUnlog                       
+01015161  MQTT_secureConnStructInit                 
+01006cf5  MqttClient                                
+01008049  MqttClientCallback                        
+0100d1b5  MqttClientConfig                          
+0100a561  MqttClientCtxCreate                       
+20009d7c  MqttClientExmple_params                   
+0100b4f5  MqttClientSub                             
+0101398b  MqttClientThread                          
+0100c175  MqttClient_send                           
+010043f9  MqttClient_start                          
+2000a978  Mqtt_ClientCtx                            
+0100d259  Mqtt_IF_Connect                           
+0100a0d9  Mqtt_start                                
+20009d88  Msg                                       
+01013bd1  Mutex_create_handle                       
+0100b36d  Network_IF_ConnectAP                      
+01012e65  Network_IF_DisconnectFromAP               
+0100dd69  Network_IF_InitDriver                     
+010105b1  Network_IF_IpConfigGet                    
+0101516d  Network_IF_ResetMCUStateMachine           
+01015179  NwpMaskInterrupt                          
+0100b5b5  NwpPowerOff                               
+01013c89  NwpPowerOn                                
+0101125d  NwpRegisterInterruptHandler               
+01015185  NwpUnMaskInterrupt                        
+01011755  NwpWaitForShutDownInd                     
+01015790  OpcodeTranslateTable                      
+01002019  PRCMCC3200MCUInit                         
+01014d13  PRCMHIBRegRead                            
+01014d29  PRCMHIBRegWrite                           
+01011d35  PRCMLPDSEnter                             
+010132cd  PRCMLPDSEnterKeepDebugIf                  
+01013cb5  PRCMLPDSIntervalSet                       
+0101235d  PRCMLPDSRestoreInfoSet                    
+01014141  PRCMLPDSWakeupSourceEnable                
+01014169  PRCMPeripheralClkDisable                  
+01011d7d  PRCMPeripheralClkEnable                   
+0100cd21  PRCMPeripheralClockGet                    
+01010945  PRCMPeripheralReset                       
+010152a7  PRCMSleepEnter                            
+01012ea1  PRCMSlowClkCtrFastGet                     
+0101025d  PRCMSysResetCauseGet                      
+01014d3f  PTLS_getBuf                               
+01014d55  PTLS_setBuf                               
+01014b4b  PTLS_taskDeleteHook                       
+0100e665  PinConfigSet                              
+010136b5  PinModeGet                                
+01012745  PinModeSet                                
+010149fd  PinToPadGet                               
+01015850  PowerCC32XX_config                        
+0100cdc9  PowerCC32XX_configureWakeup               
+200096ac  PowerCC32XX_contextSave                   
+010123a1  PowerCC32XX_enterLPDS                     
+01013ce1  PowerCC32XX_getParkState                  
+01005a27  PowerCC32XX_initPolicy                    
+2000a5e0  PowerCC32XX_module                        
+010117a1  PowerCC32XX_parkPin                       
+010136e9  PowerCC32XX_restoreParkState              
+010139ef  PowerCC32XX_restoreParkedPin              
+010111b9  PowerCC32XX_resumeLPDS                    
+01010009  PowerCC32XX_setParkState                  
+01005d91  PowerCC32XX_sleepPolicy                   
+01015191  Power_getConstraintMask                   
+01014e3d  Power_getDependencyCount                  
+010150c3  Power_getTransitionLatency                
+01014bcd  Power_idleFunc                            
+0100eaa1  Power_init                                
+01014191  Power_registerNotify                      
+01011dc5  Power_releaseConstraint                   
+0101099d  Power_releaseDependency                   
+01012edd  Power_setConstraint                       
+0100ee3d  Power_setDependency                       
+01008869  Power_sleep                               
+0101475d  Power_unregisterNotify                    
+20009ddc  RxIrqCnt                                  
+0100a8dd  SPICC32XXDMA_close                        
+010152d7  SPICC32XXDMA_control                      
+010159b0  SPICC32XXDMA_fxnTable                     
+010152fb  SPICC32XXDMA_init                         
+01007119  SPICC32XXDMA_open                         
+01004f9d  SPICC32XXDMA_transfer                     
+01009ef5  SPICC32XXDMA_transferCancel               
+01014e51  SPI_Params_init                           
+0101522b  SPI_close                                 
+010159c8  SPI_config                                
+01015beb  SPI_count                                 
+01015970  SPI_defaultParams                         
+010123e5  SPI_init                                  
+01012785  SPI_open                                  
+01015235  SPI_transfer                              
+2000a9f0  SecurityParams                            
+01014d6b  SemaphoreP_Params_init                    
+01010e6b  SemaphoreP_create                         
+01013d0d  SemaphoreP_createBinary                   
+0101519d  SemaphoreP_delete                         
+0101371d  SemaphoreP_pend                           
+01014677  SemaphoreP_post                           
+0100ddfd  Semaphore_pend_handle                     
+0100ad15  SetClientIdNamefromMacAddress             
+010144a5  SimpleLinkFatalErrorEventHandler          
+0101523f  SimpleLinkGeneralEventHandler             
+010151a9  SimpleLinkHttpServerEventHandler          
+010109f5  SimpleLinkNetAppEventHandler              
+010151b5  SimpleLinkNetAppRequestEventHandler       
+01015249  SimpleLinkNetAppRequestMemFreeEventHandler
+01012f19  SimpleLinkSockEventHandler                
+0100d4e1  SimpleLinkWlanEventHandler                
+2000a844  SlNetIfConfigWifi                         
+0101477d  SlNetIfWifi_accept                        
+010148b5  SlNetIfWifi_bind                          
+01014f7b  SlNetIfWifi_close                         
+010148d3  SlNetIfWifi_connect                       
+010117ed  SlNetIfWifi_getConnectionStatus           
+010135db  SlNetIfWifi_getHostByName                 
+010131e9  SlNetIfWifi_getIPAddr                     
+0100c661  SlNetIfWifi_getSockOpt                    
+01014b65  SlNetIfWifi_listen                        
+01009a21  SlNetIfWifi_loadSecObj                    
+01013d39  SlNetIfWifi_recv                          
+01013305  SlNetIfWifi_recvFrom                      
+01013611  SlNetIfWifi_select                        
+01013d65  SlNetIfWifi_send                          
+0101333d  SlNetIfWifi_sendTo                        
+0101043d  SlNetIfWifi_setSockOpt                    
+01013375  SlNetIfWifi_socket                        
+0100eb25  SlNetIfWifi_sockstartSec                  
+0100a1c1  SlNetIf_add                               
+010144c9  SlNetIf_getConnectionStatus               
+010141b9  SlNetIf_getIfByID                         
+010152ff  SlNetIf_init                              
+010112ad  SlNetIf_queryIf                           
+0100e3a9  SlNetSock_accept                          
+010127c5  SlNetSock_bind                            
+01012bff  SlNetSock_close                           
+01011e0d  SlNetSock_connect                         
+0100dfb9  SlNetSock_create                          
+01011e55  SlNetSock_init                            
+010133e5  SlNetSock_listen                          
+01010a4d  SlNetSock_recv                            
+010102bd  SlNetSock_recvFrom                        
+01014e65  SlNetSock_sdsClrAll                       
+010141e1  SlNetSock_sdsIsSet                        
+01014209  SlNetSock_sdsSet                          
+01014fe3  SlNetSock_secAttribCreate                 
+01014231  SlNetSock_secAttribDelete                 
+01012805  SlNetSock_secAttribSet                    
+010060dd  SlNetSock_select                          
+01010aa5  SlNetSock_send                            
+0101031d  SlNetSock_sendTo                          
+01011e9d  SlNetSock_setOpt                          
+01011885  SlNetSock_startSec                        
+0100eba9  SlNetUtil_getHostByName                   
+0101341d  SlNetUtil_htonl                           
+01013751  SlNetUtil_htons                           
+01013fa1  SlNetUtil_inetPton                        
+01015303  SlNetUtil_init                            
+0101341d  SlNetUtil_ntohl                           
+01013751  SlNetUtil_ntohs                           
+01014ff5  SysTickDisable                            
+01015005  SysTickEnable                             
+010152af  TimerGetCurrentTimestamp                  
+01015bec  Timer_count                               
+20009dcc  UART0                                     
+01014be5  UARTBusy                                  
+01009b19  UARTCC32XXDMA_close                       
+0101037d  UARTCC32XXDMA_control                     
+010158bc  UARTCC32XXDMA_fxnTable                    
+01007117  UARTCC32XXDMA_init                        
+01004605  UARTCC32XXDMA_open                        
+0100eebd  UARTCC32XXDMA_read                        
+01013fcb  UARTCC32XXDMA_readCancel                  
+0100f135  UARTCC32XXDMA_readPolling                 
+0100e435  UARTCC32XXDMA_write                       
+01013ff5  UARTCC32XXDMA_writeCancel                 
+010112fd  UARTCC32XXDMA_writePolling                
+01014bfd  UART_Params_init                          
+01015b74  UART_config                               
+01015253  UART_control                              
+01015bed  UART_count                                
+010158e4  UART_defaultParams                        
+0101246d  UART_init                                 
+01012845  UART_open                                 
+0101525d  UART_write                                
+01013785  UDMACC32XX_close                          
+01015bb0  UDMACC32XX_config                         
+01012885  UDMACC32XX_init                           
+0100f03d  UDMACC32XX_open                           
+010152dd  UtilsDelay                                
+01015bee  Watchdog_count                            
+01015800  _SlActionLookupTable                      
+0100921d  _SlDeviceEventHandler                     
+01011ee5  _SlDeviceFatalErrorEvtHdlr                
+01011f2d  _SlDeviceGeneralEvtHdlr                   
+0100a9b5  _SlDeviceHandleAsync_InitComplete         
+0100e0dd  _SlDeviceHandleAsync_Stop                 
+0100fa51  _SlDeviceHandleResetRequestInternally     
+010151c1  _SlDeviceResetRequestInitCompletedCB      
+01011f75  _SlDrvBasicCmd                            
+01009321  _SlDrvCmdOp                               
+0100f829  _SlDrvCmdSend_noLock                      
+0101139d  _SlDrvCmdSend_noWait                      
+01003ae1  _SlDrvDataReadOp                          
+010041e1  _SlDrvDataWriteOp                         
+01015015  _SlDrvDispatchHttpServerEvents            
+01015025  _SlDrvDispatchNetAppRequestEvents         
+010078e9  _SlDrvDriverCBDeinit                      
+01003fbd  _SlDrvDriverCBInit                        
+0100e4c1  _SlDrvDriverIsApiAllowed                  
+010128c5  _SlDrvGlobalObjUnLock                     
+0100c2dd  _SlDrvHandleFatalError                    
+010144ed  _SlDrvIsApiInProgress                     
+01015035  _SlDrvIsSpawnOwnGlobalLock                
+0100d069  _SlDrvIsTimeoutExpired                    
+01014d81  _SlDrvMemZero                             
+010077a9  _SlDrvMsgReadSpawnCtx                     
+01009529  _SlDrvObjGlobalLockWaitForever            
+010148f1  _SlDrvObjLockWaitForever                  
+0101490f  _SlDrvObjUnLock                           
+0100e6ed  _SlDrvProtectAsyncRespSetting             
+01014259  _SlDrvProtectionObjLockWaitForever        
+01014281  _SlDrvProtectionObjUnLock                 
+01005a29  _SlDrvReleaseAllActivePendingPoolObj      
+01003351  _SlDrvReleasePoolObj                      
+010150d1  _SlDrvResetCmdExt                         
+01011069  _SlDrvRxIrqHandler                        
+01014511  _SlDrvStartMeasureTimeout                 
+0101492d  _SlDrvSyncObjSignal                       
+01013d91  _SlDrvSyncObjWaitForever                  
+01011fbd  _SlDrvSyncObjWaitTimeout                  
+0100aa8d  _SlDrvWaitForInternalAsyncEvent           
+01002ae5  _SlDrvWaitForPoolObj                      
+01012905  _SlFindAndReleasePendingCmd               
+010142a9  _SlFlowContSet                            
+01014a35  _SlInternalIsItSpawnThread                
+0101060d  _SlInternalSpawn                          
+0101143d  _SlInternalSpawnTaskEntry                 
+01012945  _SlInternalSpawnWaitForEvent              
+01012985  _SlIsEventRegistered                      
+010049fd  _SlNetAppEventHandler                     
+01012005  _SlNetAppEvtHdlr                          
+0100be95  _SlNetAppHandleAsync_DnsGetHostByName     
+01008bbd  _SlNetAppHandleAsync_DnsGetHostByService  
+0100ab65  _SlNetAppHandleAsync_NetAppReceive        
+0100bf4d  _SlNetAppHandleAsync_PingResponse         
+0101148d  _SlNetAppHttpServerHdlr                   
+010114dd  _SlNetAppRequestHdlr                      
+0101204d  _SlNetAppRequestMemFree                   
+0100b975  _SlNetAppSendResponse                     
+01015c3c  _SlNetAppSendResponseCmdCtrl              
+0100fb29  _SlNetAppSendTokenValue                   
+01015c40  _SlNetAppSendTokenValueCmdCtrl            
+0100c391  _SlNetUtilHandleAsync_Cmd                 
+01012095  _SlSockEvtHdlr                            
+0100e16d  _SlSocketHandleAsync_Accept               
+0100c9cd  _SlSocketHandleAsync_Close                
+0100ca79  _SlSocketHandleAsync_Connect              
+01001b5d  _SlSocketHandleAsync_Select               
+0100817d  _SlSocketHandleAsync_StartTLS             
+0100fd3d  _SlSpawnMsgListGetCount                   
+01009115  _SlSpawnMsgListInsert                     
+0100d621  _SlSpawnMsgListProcess                    
+010120dd  _SlWlanEvtHdlr                            
+20040000  __STACK_END                               
+00000400  __STACK_SIZE                              
+01015e30  __TI_CINIT_Base                           
+01015e40  __TI_CINIT_Limit                          
+01015e18  __TI_Handler_Table_Base                   
+01015e24  __TI_Handler_Table_Limit                  
+010124b1  __TI_auto_init_nobinit_nopinit            
+0100fda5  __TI_decompress_lzss                      
+010150fb  __TI_decompress_none                      
+ffffffff  __TI_pprof_out_hndl                       
+01000841  __TI_printfi                              
+ffffffff  __TI_prof_data_size                       
+ffffffff  __TI_prof_data_start                      
+01015c80  __TI_static_base__                        
+010151e5  __TI_zero_init                            
+0100e995  __aeabi_cdcmpeq                           
+0100e995  __aeabi_cdcmple                           
+0100ea1b  __aeabi_cdrcmple                          
+010121b5  __aeabi_d2iz                              
+0100587b  __aeabi_dadd                              
+01007f11  __aeabi_ddiv                              
+01009829  __aeabi_dmul                              
+01005871  __aeabi_dsub                              
+01014699  __aeabi_errno_addr                        
+01013c2d  __aeabi_i2d                               
+0100a0d7  __aeabi_idiv0                             
+0100a0d7  __aeabi_ldiv0                             
+01014c75  __aeabi_lmul                              
+0100f229  __aeabi_memclr                            
+0100f229  __aeabi_memclr4                           
+0100f229  __aeabi_memclr8                           
+0100d9d1  __aeabi_memcpy                            
+0100d9d1  __aeabi_memcpy4                           
+0100d9d1  __aeabi_memcpy8                           
+0100f22b  __aeabi_memset                            
+0100f22b  __aeabi_memset4                           
+0100f22b  __aeabi_memset8                           
+0100dcd3  __aeabi_uldivmod                          
+ffffffff  __binit__                                 
+ffffffff  __c_args__                                
+UNDEFED   __mpu_init                                
+2003fc00  __stack                                   
+01014535  _c_int00_noargs                           
+0100c445  _clock_abstime2ticks                      
+01015318  _ctypes_                                  
+01014433  _pthread_cleanup_pop                      
+010142f9  _sl_ExtLib_AwaitedAckLockedSet            
+010150df  _sl_ExtLib_AwaitedAckSet                  
+010129c5  _sl_ExtLib_ServerAckLockedWait            
+UNDEFED   _system_post_cinit                        
+01015307  _system_pre_init                          
+0101530b  abort                                     
+0101191d  atoi                                      
+ffffffff  binit                                     
+01010669  calloc                                    
+200093fc  clients                                   
+0100cb25  clock_gettime                             
+010151d9  copysign                                  
+010151d9  copysignl                                 
+01013dbd  createUartQueue                           
+01013de9  create_MqttQueue                          
+01015271  dbgOutputLoc                              
+0100fb95  dbgUARTInit                               
+01014a51  dbgUARTVal                                
+01010bad  eTaskConfirmSleepModeStatus               
+01015055  errorRoutine                              
+01014c2d  free                                      
+010106c5  frexp                                     
+010106c5  frexpl                                    
+2000a9bc  gApConnectionState                        
+2000aa2d  gGlobalLockCntReleased                    
+2000aa2c  gGlobalLockCntRequested                   
+2000a9c0  gInitState                                
+20009000  g_CB                                      
+2000a930  g_LibsEvents                              
+2000aa2e  g_SlDeviceStatus                          
+20009c04  g_SlInternalSpawnCB                       
+2000a954  g_UserEvents                              
+2000aaa8  g_intHandle                               
+2000aa30  g_pCB                                     
+2000a9c8  g_rx_task_hndl                            
+20009dac  g_ucConnectionBSSID                       
+20009c2c  g_ucConnectionSSID                        
+2000aa24  g_ulGatewayIP                             
+2000aa20  g_ulStaIp                                 
+2000aa28  g_ulStatus                                
+20009dda  g_usConnectIndex                          
+2000aa78  gpioCallbackFunctions                     
+2000aa14  gpioPinConfigs                            
+01015bf6  inPinTypes                                
+01011969  initVectors                               
+01014969  jsmn_init                                 
+010027c9  jsmn_parse                                
+0100aeb5  ldexp                                     
+0100aeb5  ldexpl                                    
+01011111  ltoa                                      
+0100b119  main                                      
+01005f41  mainThread                                
+01012603  malloc                                    
+0100c871  matchModeByRole                           
+2000a9c4  memPtrCounterfree                         
+01014a89  memccpy                                   
+0100d9d1  memcpy                                    
+0100f231  memset                                    
+20009dd0  mqttQueue                                 
+2000a9cc  mqttThread                                
+01015bfc  outPinStrengths                           
+01015bd8  outPinTypes                               
+2000aa34  pPingCallBackFunc                         
+2000a74c  parkInfo                                  
+010035e5  parseAction                               
+20009a78  payload_buff                              
+01014ac1  pthread_attr_init                         
+010146bb  pthread_attr_setdetachstate               
+01014321  pthread_attr_setschedparam                
+01014ea1  pthread_attr_setstacksize                 
+01007dd9  pthread_create                            
+0101077d  pthread_exit                              
+01014b99  pthread_mutex_destroy                     
+0100f6cd  pthread_mutex_init                        
+01014eb5  pthread_mutex_lock                        
+010103dd  pthread_mutex_unlock                      
+01014add  pthread_mutexattr_init                    
+01013e6d  pthread_mutexattr_settype                 
+01014ec9  pthread_self                              
+01012d35  pthread_setcancelstate                    
+01006a15  pvPortMalloc                              
+01013045  pvTaskGetThreadLocalStoragePointer        
+01014af9  pvTaskIncrementMutexHeldCount             
+01013bff  pvTimerGetTimerID                         
+2000a8d4  pxCurrentTCB                              
+0101157d  pxPortInitialiseStack                     
+2000a8d3  qos                                       
+01014349  readMsg_MqttQueue                         
+01013e99  readMsqFromUartQueue                      
+01012a85  receivedMsg_MqttQueue                     
+01014d99  resetISR                                  
+01014da8  resetVectorAddr                           
+01000800  resetVectors                              
+0100aeb5  scalbn                                    
+0100aeb5  scalbnl                                   
+01014edd  sem_destroy                               
+010145c5  sem_getvalue                              
+010115cd  sem_init                                  
+01012d73  sem_post                                  
+0101049b  sem_timedwait                             
+01014371  sem_trywait                               
+01014c8d  sem_wait                                  
+01013b11  sendCmdMsg_MqttQueue                      
+010107d9  sendMsgToUart                             
+01005bdd  sl_Accept                                 
+0100d2fd  sl_Bind                                   
+01009629  sl_Close                                  
+01006711  sl_Connect                                
+0100cf19  sl_FsClose                                
+01008505  sl_FsOpen                                 
+01009729  sl_FsWrite                                
+0100c4f9  sl_GetSockOpt                             
+01010c5d  sl_Listen                                 
+01006b8d  sl_NetAppDnsGetHostByName                 
+0100b735  sl_NetCfgGet                              
+0100e5d9  sl_Recv                                   
+010073c5  sl_RecvFrom                               
+01010cb5  sl_RegisterLibsEventHandler               
+0100309d  sl_Select                                 
+0100bc65  sl_Send                                   
+01009e01  sl_SendTo                                 
+0100ed35  sl_SetSockOpt                             
+0100f485  sl_Socket                                 
+01008985  sl_Start                                  
+01007661  sl_StartTLS                               
+01005339  sl_Stop                                   
+0101527b  sl_Task                                   
+0100e885  sl_UnregisterLibsEventHandler             
+01003865  sl_WlanConnect                            
+010145e9  sl_WlanDisconnect                         
+0100c005  sl_WlanGet                                
+01011b31  sl_WlanSetMode                            
+010121fd  sleep                                     
+01015718  spiCC32XXDMAHWAttrs                       
+20009970  spiCC32XXDMAObjects                       
+20009db4  spiCC32XXSDMAscratchBuf                   
+01015117  spi_Close                                 
+0100fe0d  spi_Open                                  
+0100d6c1  spi_Read                                  
+0100d75f  spi_Write                                 
+01012ac5  sprintf                                   
+01014daf  strchr                                    
+01014ef1  strlen                                    
+01013ef1  strncmp                                   
+0101367d  strncpy                                   
+01008efd  strtoul                                   
+2000aab0  topic                                     
+010151fd  uDMAErrorStatusClear                      
+01015209  uDMAErrorStatusGet                        
+20009af8  uartCC32XXObjects0                        
+20009c50  uartParams                                
+20009dd4  uartQueue                                 
+01013889  uartThread                                
+01015ba4  udmaCC3220SHWAttrs                        
+20009dbc  udmaCC3220SObject                         
+01015bb8  ulMaxSyscallInterruptPriority             
+0100bd31  ulPortGetIPSR                             
+01013135  usleep                                    
+01012245  uxListRemove                              
+010140c7  uxQueueMessagesWaiting                    
+0100a55f  vApplicationMallocFailedHook              
+01015285  vApplicationStackOverflowHook             
+01013b41  vListInitialise                           
+01015095  vListInitialiseItem                       
+0100fedb  vListInsert                               
+01013171  vListInsertEnd                            
+01011b7d  vPortEnterCritical                        
+01013b71  vPortExitCritical                         
+0100da6d  vPortFree                                 
+0100bd95  vPortSVCHandler                           
+01010d0d  vPortSetupTimerInterrupt                  
+0100bdb9  vPortStartFirstTask                       
+01014f2d  vPortSuppressTicksAndSleep                
+0100f741  vPortValidateInterruptPriority            
+0101460d  vQueueDelete                              
+01010835  vQueueWaitForMessageRestricted            
+01010891  vTaskDelay                                
+01009c11  vTaskDelete                               
+01014631  vTaskInternalSetTimeOutState              
+01015215  vTaskMissedYield                          
+010138bd  vTaskPlaceOnEventList                     
+01012b05  vTaskPlaceOnEventListRestricted           
+01008cd5  vTaskPriorityDisinheritAfterTimeout       
+01013f1d  vTaskSetApplicationTaskTag                
+010138f1  vTaskSetThreadLocalStoragePointer         
+0100df25  vTaskStartScheduler                       
+01012539  vTaskStepTick                             
+01009925  vTaskSuspend                              
+010150a5  vTaskSuspendAll                           
+0100a801  vTaskSwitchContext                        
+01014fb1  wcslen                                    
+2000aa38  will_param                                
+0100bd49  xPortPendSVHandler                        
+0100b7f5  xPortStartScheduler                       
+01013f49  xPortSysTickHandler                       
+01010d65  xQueueCreateCountingSemaphore             
+01013f75  xQueueCreateMutex                         
+0100fc6b  xQueueGenericCreate                       
+0100c0bd  xQueueGenericReset                        
+010056b9  xQueueGenericSend                         
+01009425  xQueueGenericSendFromISR                  
+01009fe7  xQueueGiveFromISR                         
+0101161d  xQueueGiveMutexRecursive                  
+01006895  xQueueReceive                             
+0100ac3d  xQueueReceiveFromISR                      
+01004dc9  xQueueSemaphoreTake                       
+01010dbd  xQueueTakeMutexRecursive                  
+0100c7c1  xTaskCheckForTimeOut                      
+0100f2a3  xTaskCreate                               
+01014399  xTaskGetApplicationTaskTag                
+01014f41  xTaskGetCurrentTaskHandle                 
+01013ba1  xTaskGetSchedulerState                    
+01014f55  xTaskGetTickCount                         
+01007c9d  xTaskIncrementTick                        
+0100a641  xTaskPriorityDisinherit                   
+0100a391  xTaskPriorityInherit                      
+0100cfc1  xTaskRemoveFromEventList                  
+01008aa1  xTaskResumeAll                            
+010131ad  xTimerCreate                              
+01011165  xTimerCreateTimerTask                     
+0100edb9  xTimerGenericCommand                      
+
+
+GLOBAL SYMBOLS: SORTED BY Symbol Address 
+
+address   name                                      
+-------   ----                                      
+00000400  __STACK_SIZE                              
+01000800  resetVectors                              
+01000841  __TI_printfi                              
+0100128f  Board_initHook                            
+01001b5d  _SlSocketHandleAsync_Select               
+01002019  PRCMCC3200MCUInit                         
+010027c9  jsmn_parse                                
+01002ae5  _SlDrvWaitForPoolObj                      
+0100309d  sl_Select                                 
+01003351  _SlDrvReleasePoolObj                      
+010035e5  parseAction                               
+01003865  sl_WlanConnect                            
+01003ae1  _SlDrvDataReadOp                          
+01003fbd  _SlDrvDriverCBInit                        
+010041e1  _SlDrvDataWriteOp                         
+010043f9  MqttClient_start                          
+01004605  UARTCC32XXDMA_open                        
+010049fd  _SlNetAppEventHandler                     
+01004bf1  GPIO_setConfig                            
+01004dc9  xQueueSemaphoreTake                       
+01004f9d  SPICC32XXDMA_transfer                     
+01005339  sl_Stop                                   
+010056b9  xQueueGenericSend                         
+01005871  __aeabi_dsub                              
+0100587b  __aeabi_dadd                              
+01005a27  PowerCC32XX_initPolicy                    
+01005a29  _SlDrvReleaseAllActivePendingPoolObj      
+01005bdd  sl_Accept                                 
+01005d91  PowerCC32XX_sleepPolicy                   
+01005f41  mainThread                                
+010060dd  SlNetSock_select                          
+01006711  sl_Connect                                
+01006895  xQueueReceive                             
+01006a15  pvPortMalloc                              
+01006b8d  sl_NetAppDnsGetHostByName                 
+01006cf5  MqttClient                                
+01007117  UARTCC32XXDMA_init                        
+01007119  SPICC32XXDMA_open                         
+01007271  MQTTClient_connect                        
+010073c5  sl_RecvFrom                               
+01007661  sl_StartTLS                               
+010077a9  _SlDrvMsgReadSpawnCtx                     
+010078e9  _SlDrvDriverCBDeinit                      
+01007c9d  xTaskIncrementTick                        
+01007dd9  pthread_create                            
+01007f11  __aeabi_ddiv                              
+01008049  MqttClientCallback                        
+0100817d  _SlSocketHandleAsync_StartTLS             
+01008505  sl_FsOpen                                 
+01008869  Power_sleep                               
+01008985  sl_Start                                  
+01008aa1  xTaskResumeAll                            
+01008bbd  _SlNetAppHandleAsync_DnsGetHostByService  
+01008cd5  vTaskPriorityDisinheritAfterTimeout       
+01008de9  MQTT_PacketRecv                           
+01008efd  strtoul                                   
+01009115  _SlSpawnMsgListInsert                     
+0100921d  _SlDeviceEventHandler                     
+01009321  _SlDrvCmdOp                               
+01009425  xQueueGenericSendFromISR                  
+01009529  _SlDrvObjGlobalLockWaitForever            
+01009629  sl_Close                                  
+01009729  sl_FsWrite                                
+01009829  __aeabi_dmul                              
+01009925  vTaskSuspend                              
+01009a21  SlNetIfWifi_loadSecObj                    
+01009b19  UARTCC32XXDMA_close                       
+01009c11  vTaskDelete                               
+01009d09  MQTTNet_commOpen                          
+01009e01  sl_SendTo                                 
+01009ef5  SPICC32XXDMA_transferCancel               
+01009fe7  xQueueGiveFromISR                         
+0100a0d7  __aeabi_idiv0                             
+0100a0d7  __aeabi_ldiv0                             
+0100a0d9  Mqtt_start                                
+0100a1c1  SlNetIf_add                               
+0100a391  xTaskPriorityInherit                      
+0100a55f  vApplicationMallocFailedHook              
+0100a561  MqttClientCtxCreate                       
+0100a641  xTaskPriorityDisinherit                   
+0100a801  vTaskSwitchContext                        
+0100a8dd  SPICC32XXDMA_close                        
+0100a9b5  _SlDeviceHandleAsync_InitComplete         
+0100aa8d  _SlDrvWaitForInternalAsyncEvent           
+0100ab65  _SlNetAppHandleAsync_NetAppReceive        
+0100ac3d  xQueueReceiveFromISR                      
+0100ad15  SetClientIdNamefromMacAddress             
+0100aeb5  ldexp                                     
+0100aeb5  ldexpl                                    
+0100aeb5  scalbn                                    
+0100aeb5  scalbnl                                   
+0100b119  main                                      
+0100b2a9  GPIO_init                                 
+0100b36d  Network_IF_ConnectAP                      
+0100b4f5  MqttClientSub                             
+0100b5b5  NwpPowerOff                               
+0100b735  sl_NetCfgGet                              
+0100b7f5  xPortStartScheduler                       
+0100b975  _SlNetAppSendResponse                     
+0100bc65  sl_Send                                   
+0100bd31  ulPortGetIPSR                             
+0100bd49  xPortPendSVHandler                        
+0100bd95  vPortSVCHandler                           
+0100bdb9  vPortStartFirstTask                       
+0100be95  _SlNetAppHandleAsync_DnsGetHostByName     
+0100bf4d  _SlNetAppHandleAsync_PingResponse         
+0100c005  sl_WlanGet                                
+0100c0bd  xQueueGenericReset                        
+0100c175  MqttClient_send                           
+0100c2dd  _SlDrvHandleFatalError                    
+0100c391  _SlNetUtilHandleAsync_Cmd                 
+0100c445  _clock_abstime2ticks                      
+0100c4f9  sl_GetSockOpt                             
+0100c661  SlNetIfWifi_getSockOpt                    
+0100c7c1  xTaskCheckForTimeOut                      
+0100c871  matchModeByRole                           
+0100c9cd  _SlSocketHandleAsync_Close                
+0100ca79  _SlSocketHandleAsync_Connect              
+0100cb25  clock_gettime                             
+0100cbd1  IntDisable                                
+0100cc79  IntEnable                                 
+0100cd21  PRCMPeripheralClockGet                    
+0100cdc9  PowerCC32XX_configureWakeup               
+0100cf19  sl_FsClose                                
+0100cfc1  xTaskRemoveFromEventList                  
+0100d069  _SlDrvIsTimeoutExpired                    
+0100d111  MQTTClient_create                         
+0100d1b5  MqttClientConfig                          
+0100d259  Mqtt_IF_Connect                           
+0100d2fd  sl_Bind                                   
+0100d3a1  ClockP_create                             
+0100d4e1  SimpleLinkWlanEventHandler                
+0100d621  _SlSpawnMsgListProcess                    
+0100d6c1  spi_Read                                  
+0100d75f  spi_Write                                 
+0100d7fd  MQTTClientCore_initLib                    
+0100d899  MQTTClientCore_sendPubMsg                 
+0100d9d1  __aeabi_memcpy                            
+0100d9d1  __aeabi_memcpy4                           
+0100d9d1  __aeabi_memcpy8                           
+0100d9d1  memcpy                                    
+0100da6d  vPortFree                                 
+0100dc3d  MQTTNet_tcpSelect                         
+0100dcd3  __aeabi_uldivmod                          
+0100dd69  Network_IF_InitDriver                     
+0100ddfd  Semaphore_pend_handle                     
+0100df25  vTaskStartScheduler                       
+0100dfb9  SlNetSock_create                          
+0100e0dd  _SlDeviceHandleAsync_Stop                 
+0100e16d  _SlSocketHandleAsync_Accept               
+0100e31d  MQTTClientCore_createCtx                  
+0100e3a9  SlNetSock_accept                          
+0100e435  UARTCC32XXDMA_write                       
+0100e4c1  _SlDrvDriverIsApiAllowed                  
+0100e5d9  sl_Recv                                   
+0100e665  PinConfigSet                              
+0100e6ed  _SlDrvProtectAsyncRespSetting             
+0100e885  sl_UnregisterLibsEventHandler             
+0100e995  __aeabi_cdcmpeq                           
+0100e995  __aeabi_cdcmple                           
+0100ea1b  __aeabi_cdrcmple                          
+0100eaa1  Power_init                                
+0100eb25  SlNetIfWifi_sockstartSec                  
+0100eba9  SlNetUtil_getHostByName                   
+0100ed35  sl_SetSockOpt                             
+0100edb9  xTimerGenericCommand                      
+0100ee3d  Power_setDependency                       
+0100eebd  UARTCC32XXDMA_read                        
+0100f03d  UDMACC32XX_open                           
+0100f135  UARTCC32XXDMA_readPolling                 
+0100f229  __aeabi_memclr                            
+0100f229  __aeabi_memclr4                           
+0100f229  __aeabi_memclr8                           
+0100f22b  __aeabi_memset                            
+0100f22b  __aeabi_memset4                           
+0100f22b  __aeabi_memset8                           
+0100f231  memset                                    
+0100f2a3  xTaskCreate                               
+0100f31d  GPIO_hwiIntFxn                            
+0100f395  MQTTNet_recvFrom                          
+0100f485  sl_Socket                                 
+0100f4fd  MQTTNet_tcpAccept                         
+0100f6cd  pthread_mutex_init                        
+0100f741  vPortValidateInterruptPriority            
+0100f7b5  MQTT_packetProcPubRx                      
+0100f829  _SlDrvCmdSend_noLock                      
+0100f979  MQTTClient_run                            
+0100fa51  _SlDeviceHandleResetRequestInternally     
+0100fb29  _SlNetAppSendTokenValue                   
+0100fb95  dbgUARTInit                               
+0100fc01  MQTTNet_sendTo                            
+0100fc6b  xQueueGenericCreate                       
+0100fcd5  MQTT_qos2PubCqUnlog                       
+0100fd3d  _SlSpawnMsgListGetCount                   
+0100fda5  __TI_decompress_lzss                      
+0100fe0d  spi_Open                                  
+0100fedb  vListInsert                               
+0100ff41  ClockP_stop                               
+0100ffa5  MQTT_packetPubAppendTopic                 
+01010009  PowerCC32XX_setParkState                  
+010101fd  HwiP_create                               
+0101025d  PRCMSysResetCauseGet                      
+010102bd  SlNetSock_recvFrom                        
+0101031d  SlNetSock_sendTo                          
+0101037d  UARTCC32XXDMA_control                     
+010103dd  pthread_mutex_unlock                      
+0101043d  SlNetIfWifi_setSockOpt                    
+0101049b  sem_timedwait                             
+010104f9  GPIO_setCallback                          
+01010555  MQTTNet_tcpListen                         
+010105b1  Network_IF_IpConfigGet                    
+0101060d  _SlInternalSpawn                          
+01010669  calloc                                    
+010106c5  frexp                                     
+010106c5  frexpl                                    
+0101077d  pthread_exit                              
+010107d9  sendMsgToUart                             
+01010835  vQueueWaitForMessageRestricted            
+01010891  vTaskDelay                                
+010108ed  IntPendClear                              
+01010945  PRCMPeripheralReset                       
+0101099d  Power_releaseDependency                   
+010109f5  SimpleLinkNetAppEventHandler              
+01010a4d  SlNetSock_recv                            
+01010aa5  SlNetSock_send                            
+01010bad  eTaskConfirmSleepModeStatus               
+01010c5d  sl_Listen                                 
+01010cb5  sl_RegisterLibsEventHandler               
+01010d0d  vPortSetupTimerInterrupt                  
+01010d65  xQueueCreateCountingSemaphore             
+01010dbd  xQueueTakeMutexRecursive                  
+01010e15  MQTT_packetPubAppendData                  
+01010e6b  SemaphoreP_create                         
+01010f6d  ClockP_delete                             
+01010fc1  IntPrioritySet                            
+01011015  MQTTClientCore_sendDisconn                
+01011069  _SlDrvRxIrqHandler                        
+01011111  ltoa                                      
+01011165  xTimerCreateTimerTask                     
+010111b9  PowerCC32XX_resumeLPDS                    
+0101125d  NwpRegisterInterruptHandler               
+010112ad  SlNetIf_queryIf                           
+010112fd  UARTCC32XXDMA_writePolling                
+0101139d  _SlDrvCmdSend_noWait                      
+0101143d  _SlInternalSpawnTaskEntry                 
+0101148d  _SlNetAppHttpServerHdlr                   
+010114dd  _SlNetAppRequestHdlr                      
+0101157d  pxPortInitialiseStack                     
+010115cd  sem_init                                  
+0101161d  xQueueGiveMutexRecursive                  
+0101166d  MQTTClientCore_registerWillInfo           
+01011709  GPIO_enableInt                            
+01011755  NwpWaitForShutDownInd                     
+010117a1  PowerCC32XX_parkPin                       
+010117ed  SlNetIfWifi_getConnectionStatus           
+01011885  SlNetSock_startSec                        
+0101191d  atoi                                      
+01011969  initVectors                               
+01011b31  sl_WlanSetMode                            
+01011b7d  vPortEnterCritical                        
+01011c5d  FlashDisable                              
+01011ca5  HwiP_dispatch                             
+01011ced  MQTTClient_set                            
+01011d35  PRCMLPDSEnter                             
+01011d7d  PRCMPeripheralClkEnable                   
+01011dc5  Power_releaseConstraint                   
+01011e0d  SlNetSock_connect                         
+01011e55  SlNetSock_init                            
+01011e9d  SlNetSock_setOpt                          
+01011ee5  _SlDeviceFatalErrorEvtHdlr                
+01011f2d  _SlDeviceGeneralEvtHdlr                   
+01011f75  _SlDrvBasicCmd                            
+01011fbd  _SlDrvSyncObjWaitTimeout                  
+01012005  _SlNetAppEvtHdlr                          
+0101204d  _SlNetAppRequestMemFree                   
+01012095  _SlSockEvtHdlr                            
+010120dd  _SlWlanEvtHdlr                            
+010121b5  __aeabi_d2iz                              
+010121fd  sleep                                     
+01012245  uxListRemove                              
+010122d5  MQTTClientCore_run                        
+01012319  MQTTNet_tcpRecv                           
+0101235d  PRCMLPDSRestoreInfoSet                    
+010123a1  PowerCC32XX_enterLPDS                     
+010123e5  SPI_init                                  
+0101246d  UART_init                                 
+010124b1  __TI_auto_init_nobinit_nopinit            
+01012539  vTaskStepTick                             
+010125c1  MQTT_packetBufRdRemlen                    
+01012603  malloc                                    
+01012685  InitializeAppVariables                    
+010126c5  MQTTClientCore_registerCtxInfo            
+01012705  MQTT_publish                              
+01012745  PinModeSet                                
+01012785  SPI_open                                  
+010127c5  SlNetSock_bind                            
+01012805  SlNetSock_secAttribSet                    
+01012845  UART_open                                 
+01012885  UDMACC32XX_init                           
+010128c5  _SlDrvGlobalObjUnLock                     
+01012905  _SlFindAndReleasePendingCmd               
+01012945  _SlInternalSpawnWaitForEvent              
+01012985  _SlIsEventRegistered                      
+010129c5  _sl_ExtLib_ServerAckLockedWait            
+01012a85  receivedMsg_MqttQueue                     
+01012ac5  sprintf                                   
+01012b05  vTaskPlaceOnEventListRestricted           
+01012b45  ClockP_callbackFxn                        
+01012b83  MQTT_packetAckWlistRemove                 
+01012bc1  MQTT_packetBufTailWrRemlen                
+01012bff  SlNetSock_close                           
+01012d35  pthread_setcancelstate                    
+01012d73  sem_post                                  
+01012db1  MQTTClientCore_registerBuffers            
+01012ded  MQTTClient_disconnect                     
+01012e29  MQTT_qos2PubCqCheck                       
+01012e65  Network_IF_DisconnectFromAP               
+01012ea1  PRCMSlowClkCtrFastGet                     
+01012edd  Power_setConstraint                       
+01012f19  SimpleLinkSockEventHandler                
+01013045  pvTaskGetThreadLocalStoragePointer        
+01013135  usleep                                    
+01013171  vListInsertEnd                            
+010131ad  xTimerCreate                              
+010131e9  SlNetIfWifi_getIPAddr                     
+0101325d  MQTTClientCore_registerNetSvc             
+01013295  MQTT_qos2PubCqLogup                       
+010132cd  PRCMLPDSEnterKeepDebugIf                  
+01013305  SlNetIfWifi_recvFrom                      
+0101333d  SlNetIfWifi_sendTo                        
+01013375  SlNetIfWifi_socket                        
+010133e5  SlNetSock_listen                          
+0101341d  SlNetUtil_htonl                           
+0101341d  SlNetUtil_ntohl                           
+010135a5  MQTT_packetPrepFh                         
+010135db  SlNetIfWifi_getHostByName                 
+01013611  SlNetIfWifi_select                        
+0101367d  strncpy                                   
+010136b5  PinModeGet                                
+010136e9  PowerCC32XX_restoreParkState              
+0101371d  SemaphoreP_pend                           
+01013751  SlNetUtil_htons                           
+01013751  SlNetUtil_ntohs                           
+01013785  UDMACC32XX_close                          
+01013889  uartThread                                
+010138bd  vTaskPlaceOnEventList                     
+010138f1  vTaskSetThreadLocalStoragePointer         
+01013959  MQTT_clCtxTimeoutInsert                   
+0101398b  MqttClientThread                          
+010139ef  PowerCC32XX_restoreParkedPin              
+01013b11  sendCmdMsg_MqttQueue                      
+01013b41  vListInitialise                           
+01013b71  vPortExitCritical                         
+01013ba1  xTaskGetSchedulerState                    
+01013bd1  Mutex_create_handle                       
+01013bff  pvTimerGetTimerID                         
+01013c2d  __aeabi_i2d                               
+01013c5d  HwiP_disable                              
+01013c89  NwpPowerOn                                
+01013cb5  PRCMLPDSIntervalSet                       
+01013ce1  PowerCC32XX_getParkState                  
+01013d0d  SemaphoreP_createBinary                   
+01013d39  SlNetIfWifi_recv                          
+01013d65  SlNetIfWifi_send                          
+01013d91  _SlDrvSyncObjWaitForever                  
+01013dbd  createUartQueue                           
+01013de9  create_MqttQueue                          
+01013e6d  pthread_mutexattr_settype                 
+01013e99  readMsqFromUartQueue                      
+01013ef1  strncmp                                   
+01013f1d  vTaskSetApplicationTaskTag                
+01013f49  xPortSysTickHandler                       
+01013f75  xQueueCreateMutex                         
+01013fa1  SlNetUtil_inetPton                        
+01013fcb  UARTCC32XXDMA_readCancel                  
+01013ff5  UARTCC32XXDMA_writeCancel                 
+010140c7  uxQueueMessagesWaiting                    
+010140f1  HwiP_inISR                                
+01014119  MQTT_packetBufWrUtf8                      
+01014141  PRCMLPDSWakeupSourceEnable                
+01014169  PRCMPeripheralClkDisable                  
+01014191  Power_registerNotify                      
+010141b9  SlNetIf_getIfByID                         
+010141e1  SlNetSock_sdsIsSet                        
+01014209  SlNetSock_sdsSet                          
+01014231  SlNetSock_secAttribDelete                 
+01014259  _SlDrvProtectionObjLockWaitForever        
+01014281  _SlDrvProtectionObjUnLock                 
+010142a9  _SlFlowContSet                            
+010142f9  _sl_ExtLib_AwaitedAckLockedSet            
+01014321  pthread_attr_setschedparam                
+01014349  readMsg_MqttQueue                         
+01014371  sem_trywait                               
+01014399  xTaskGetApplicationTaskTag                
+010143c1  List_put                                  
+010143e7  List_remove                               
+0101440d  MQTT_clCtxRemove                          
+01014433  _pthread_cleanup_pop                      
+01014481  IntUnregister                             
+010144a5  SimpleLinkFatalErrorEventHandler          
+010144c9  SlNetIf_getConnectionStatus               
+010144ed  _SlDrvIsApiInProgress                     
+01014511  _SlDrvStartMeasureTimeout                 
+01014535  _c_int00_noargs                           
+010145c5  sem_getvalue                              
+010145e9  sl_WlanDisconnect                         
+0101460d  vQueueDelete                              
+01014631  vTaskInternalSetTimeOutState              
+01014655  MQTT_packetProcMsgIdAckRx                 
+01014677  SemaphoreP_post                           
+01014699  __aeabi_errno_addr                        
+010146bb  pthread_attr_setdetachstate               
+010146dd  ClockP_getCpuFreq                         
+010146fd  HwiP_restore                              
+0101471d  IntRegister                               
+0101473d  MQTT_qos2PubCqReset                       
+0101475d  Power_unregisterNotify                    
+0101477d  SlNetIfWifi_accept                        
+0101483d  ClockP_start                              
+0101485b  HwiP_Params_init                          
+01014879  MQTTClientCore_alloc                      
+01014897  MQTTClientCore_ctxRun                     
+010148b5  SlNetIfWifi_bind                          
+010148d3  SlNetIfWifi_connect                       
+010148f1  _SlDrvObjLockWaitForever                  
+0101490f  _SlDrvObjUnLock                           
+0101492d  _SlDrvSyncObjSignal                       
+01014969  jsmn_init                                 
+010149e1  ClockP_Params_init                        
+010149fd  PinToPadGet                               
+01014a35  _SlInternalIsItSpawnThread                
+01014a51  dbgUARTVal                                
+01014a89  memccpy                                   
+01014ac1  pthread_attr_init                         
+01014add  pthread_mutexattr_init                    
+01014af9  pvTaskIncrementMutexHeldCount             
+01014b31  MQTT_packetAckWlistPurge                  
+01014b4b  PTLS_taskDeleteHook                       
+01014b65  SlNetIfWifi_listen                        
+01014b99  pthread_mutex_destroy                     
+01014bb3  MQTT_clCtxTimeoutUpdate                   
+01014bcd  Power_idleFunc                            
+01014be5  UARTBusy                                  
+01014bfd  UART_Params_init                          
+01014c2d  free                                      
+01014c75  __aeabi_lmul                              
+01014c8d  sem_wait                                  
+01014ca5  ClockP_setTimeout                         
+01014cbb  MQTTNet_commClose                         
+01014cd1  MQTT_clCtxReset                           
+01014ce7  MQTT_packetFree                           
+01014cfd  MQTT_packetInit                           
+01014d13  PRCMHIBRegRead                            
+01014d29  PRCMHIBRegWrite                           
+01014d3f  PTLS_getBuf                               
+01014d55  PTLS_setBuf                               
+01014d6b  SemaphoreP_Params_init                    
+01014d81  _SlDrvMemZero                             
+01014d99  resetISR                                  
+01014da8  resetVectorAddr                           
+01014daf  strchr                                    
+01014dc5  CPUcpsie                                  
+01014dd9  IntVTableBaseSet                          
+01014ded  MQTTClient_publish                        
+01014e01  MQTTNet_rtcSecs                           
+01014e15  MQTT_packetAckWlistAppend                 
+01014e29  MQTT_packetReset                          
+01014e3d  Power_getDependencyCount                  
+01014e51  SPI_Params_init                           
+01014e65  SlNetSock_sdsClrAll                       
+01014ea1  pthread_attr_setstacksize                 
+01014eb5  pthread_mutex_lock                        
+01014ec9  pthread_self                              
+01014edd  sem_destroy                               
+01014ef1  strlen                                    
+01014f2d  vPortSuppressTicksAndSleep                
+01014f41  xTaskGetCurrentTaskHandle                 
+01014f55  xTaskGetTickCount                         
+01014f69  HwiP_delete                               
+01014f7b  SlNetIfWifi_close                         
+01014fb1  wcslen                                    
+01014fc3  Board_init                                
+01014fd3  ClockP_getSystemTickPeriod                
+01014fe3  SlNetSock_secAttribCreate                 
+01014ff5  SysTickDisable                            
+01015005  SysTickEnable                             
+01015015  _SlDrvDispatchHttpServerEvents            
+01015025  _SlDrvDispatchNetAppRequestEvents         
+01015035  _SlDrvIsSpawnOwnGlobalLock                
+01015055  errorRoutine                              
+01015095  vListInitialiseItem                       
+010150a5  vTaskSuspendAll                           
+010150b5  MQTTClient_subscribe                      
+010150c3  Power_getTransitionLatency                
+010150d1  _SlDrvResetCmdExt                         
+010150df  _sl_ExtLib_AwaitedAckSet                  
+010150fb  __TI_decompress_none                      
+01015117  spi_Close                                 
+01015125  CPUwfi                                    
+01015131  HwiP_clearInterrupt                       
+0101513d  HwiP_disableInterrupt                     
+01015149  HwiP_enableInterrupt                      
+01015155  MQTTClientCore_sendConnectMsg             
+01015161  MQTT_secureConnStructInit                 
+0101516d  Network_IF_ResetMCUStateMachine           
+01015179  NwpMaskInterrupt                          
+01015185  NwpUnMaskInterrupt                        
+01015191  Power_getConstraintMask                   
+0101519d  SemaphoreP_delete                         
+010151a9  SimpleLinkHttpServerEventHandler          
+010151b5  SimpleLinkNetAppRequestEventHandler       
+010151c1  _SlDeviceResetRequestInitCompletedCB      
+010151d9  copysign                                  
+010151d9  copysignl                                 
+010151e5  __TI_zero_init                            
+010151fd  uDMAErrorStatusClear                      
+01015209  uDMAErrorStatusGet                        
+01015215  vTaskMissedYield                          
+01015221  IntMasterEnable                           
+0101522b  SPI_close                                 
+01015235  SPI_transfer                              
+0101523f  SimpleLinkGeneralEventHandler             
+01015249  SimpleLinkNetAppRequestMemFreeEventHandler
+01015253  UART_control                              
+0101525d  UART_write                                
+01015271  dbgOutputLoc                              
+0101527b  sl_Task                                   
+01015285  vApplicationStackOverflowHook             
+0101528f  ClockP_getSystemTicks                     
+01015297  MQTTClientCore_sendSubMsg                 
+0101529f  MQTTNet_tcpSend                           
+010152a7  PRCMSleepEnter                            
+010152af  TimerGetCurrentTimestamp                  
+010152d7  SPICC32XXDMA_control                      
+010152dd  UtilsDelay                                
+010152fb  SPICC32XXDMA_init                         
+010152ff  SlNetIf_init                              
+01015303  SlNetUtil_init                            
+01015307  _system_pre_init                          
+0101530b  C$$EXIT                                   
+0101530b  abort                                     
+01015318  _ctypes_                                  
+01015718  spiCC32XXDMAHWAttrs                       
+01015790  OpcodeTranslateTable                      
+01015800  _SlActionLookupTable                      
+01015850  PowerCC32XX_config                        
+010158bc  UARTCC32XXDMA_fxnTable                    
+010158e4  UART_defaultParams                        
+01015970  SPI_defaultParams                         
+010159b0  SPICC32XXDMA_fxnTable                     
+010159c8  SPI_config                                
+01015aa0  GPIOCC32XX_config                         
+01015b74  UART_config                               
+01015ba4  udmaCC3220SHWAttrs                        
+01015bb0  UDMACC32XX_config                         
+01015bb8  ulMaxSyscallInterruptPriority             
+01015bd8  outPinTypes                               
+01015be8  Display_count                             
+01015be9  Capture_count                             
+01015bea  CryptoCC32XX_count                        
+01015beb  SPI_count                                 
+01015bec  Timer_count                               
+01015bed  UART_count                                
+01015bee  Watchdog_count                            
+01015bf6  inPinTypes                                
+01015bfc  outPinStrengths                           
+01015c3c  _SlNetAppSendResponseCmdCtrl              
+01015c40  _SlNetAppSendTokenValueCmdCtrl            
+01015c80  __TI_static_base__                        
+01015e18  __TI_Handler_Table_Base                   
+01015e24  __TI_Handler_Table_Limit                  
+01015e30  __TI_CINIT_Base                           
+01015e40  __TI_CINIT_Limit                          
+20009000  g_CB                                      
+200093fc  clients                                   
+200096ac  PowerCC32XX_contextSave                   
+20009970  spiCC32XXDMAObjects                       
+20009a78  payload_buff                              
+20009af8  uartCC32XXObjects0                        
+20009bd8  GlobalLockObj                             
+20009c04  g_SlInternalSpawnCB                       
+20009c2c  g_ucConnectionSSID                        
+20009c50  uartParams                                
+20009d60  MQTTClient_Lib_CB                         
+20009d70  DeviceCB                                  
+20009d7c  MqttClientExmple_params                   
+20009d88  Msg                                       
+20009dac  g_ucConnectionBSSID                       
+20009db4  spiCC32XXSDMAscratchBuf                   
+20009dbc  udmaCC3220SObject                         
+20009dcc  UART0                                     
+20009dd0  mqttQueue                                 
+20009dd4  uartQueue                                 
+20009dd8  MQTTClient_waitSecs                       
+20009dda  g_usConnectIndex                          
+20009ddc  RxIrqCnt                                  
+20009de0  HwiP_dispatchTable                        
+2000a5e0  PowerCC32XX_module                        
+2000a74c  parkInfo                                  
+2000a844  SlNetIfConfigWifi                         
+2000a8d3  qos                                       
+2000a8d4  pxCurrentTCB                              
+2000a908  MQTTClient_net                            
+2000a930  g_LibsEvents                              
+2000a954  g_UserEvents                              
+2000a978  Mqtt_ClientCtx                            
+2000a9bc  gApConnectionState                        
+2000a9c0  gInitState                                
+2000a9c4  memPtrCounterfree                         
+2000a9c8  g_rx_task_hndl                            
+2000a9cc  mqttThread                                
+2000a9e0  ClientId                                  
+2000a9f0  SecurityParams                            
+2000aa14  gpioPinConfigs                            
+2000aa20  g_ulStaIp                                 
+2000aa24  g_ulGatewayIP                             
+2000aa28  g_ulStatus                                
+2000aa2c  gGlobalLockCntRequested                   
+2000aa2d  gGlobalLockCntReleased                    
+2000aa2e  g_SlDeviceStatus                          
+2000aa30  g_pCB                                     
+2000aa34  pPingCallBackFunc                         
+2000aa38  will_param                                
+2000aa5c  MQTTClient_closeContext                   
+2000aa60  MQTTClient_clientContext                  
+2000aa64  MQTTClient_multiSrvConn                   
+2000aa68  MQTTClient_clientCfg                      
+2000aa78  gpioCallbackFunctions                     
+2000aa98  MQTTClient_connectCfg                     
+2000aaa8  g_intHandle                               
+2000aab0  topic                                     
+2003fc00  __stack                                   
+20040000  __STACK_END                               
+ffffffff  __TI_pprof_out_hndl                       
+ffffffff  __TI_prof_data_size                       
+ffffffff  __TI_prof_data_start                      
+ffffffff  __binit__                                 
+ffffffff  __c_args__                                
+ffffffff  binit                                     
+UNDEFED   __mpu_init                                
+UNDEFED   _system_post_cinit                        
+
+[641 symbols]
